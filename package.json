@@ -1,0 +1,34 @@
+{
+  "name": "SongNSeek",
+  "version": "1.0.0",
+  "description": "![GitHub](https://img.shields.io/github/license/Joeseff6/SongNSeek) # 🎧 SongNSeek 🎵 A music application utilizing ORM for a customized user playlist experience. ## Link to Deployed Application 🔗",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joeseff6/SongNSeek.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Joeseff6/SongNSeek/issues"
+  },
+  "homepage": "https://github.com/Joeseff6/SongNSeek#readme",
+  "dependencies": {
+    "connect-session-sequelize": "^7.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.1",
+    "express-session": "^1.17.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "nodemon": "^2.0.7",
+    "path": "^0.12.7",
+    "sequelize": "^6.5.1"
+  }
+}
