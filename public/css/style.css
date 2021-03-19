@@ -1,6 +1,6 @@
 * {
     font-family: 'Righteous', cursive;
-    color: #000000;
+    color: white;
 }
 
 /* Sidebar 009688 */
@@ -9,10 +9,13 @@
 
 /* Background #223843 */
 
-body,
-html {
+body, html {
     background-color: #223843;
     height: 100%;
+}
+
+button {
+    color: black;
 }
 
 /* The hero image */
