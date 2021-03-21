@@ -52,7 +52,7 @@ Artist.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Artist',
+    modelName: 'artist',
     }
 );
 

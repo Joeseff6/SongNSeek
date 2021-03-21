@@ -14,7 +14,7 @@ Search.init(
     recently_added: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        autoIncrement: true,
+        // autoIncrement: true,
     },
     library_id: {
         type: DataTypes.INTEGER,
@@ -23,14 +23,14 @@ Search.init(
         key: 'id',
         },
     },
-},
-    {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'Search',
-    }
+    },
+        {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'search',
+        }
 );
 
 module.exports = Search;
