@@ -1,5 +1,9 @@
 # Joy Umoekpo
 
+## Sat Mar 20 2021
+- Continued working on homepage in handlebars
+- Started working on login and sign up pages in handlebars
+
 ## Fri Mar 19 2021
 - Continued to work on homepage HTML
 
