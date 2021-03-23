@@ -50,6 +50,7 @@ searchForm.submit((event) => {
 
 
 const createButtons = (searchObj) => {
+    $(`.remove`).remove();
     for (let i = 0; i < searchObj.length-1; i++) {
         let buttonEl = $(`<button/>`);
         buttonEl.text(`${searchObj[i].artist}/${searchObj[i].song}/${searchObj[i].album}`).attr(`class`,`btn remove`).attr(`data-index`,`${i}`);
