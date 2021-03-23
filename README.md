@@ -75,3 +75,5 @@ _So that I can listen to songs and customize playlists._
 * https://www.w3schools.com/howto/howto_css_hero_image.asp
 * https://www.w3schools.com/cssref/pr_background-image.asp
 * https://www.geeksforgeeks.org/how-to-darken-an-image-using-css/
+* https://stackoverflow.com/questions/14310154/how-do-i-set-a-background-color-for-the-width-of-text-not-the-width-of-the-enti
+<!-- * https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/blur() -->

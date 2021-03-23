@@ -18,6 +18,13 @@ button {
     color: white;
 }
 
+.carousel-caption {
+    text-align: center;
+    background-color: black;
+    margin: auto 3em;
+    border-radius: 50px;
+}
+
 img {
-    filter: brightness(100%);
+    /* filter: blur(0.1em); */
 }
