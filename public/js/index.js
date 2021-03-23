@@ -1,34 +1,48 @@
 // https://api.audiomack.com/v1
-const crypto = require('crypto')
-const OAuth = require('oauth-1.0a')
+// const crypto = require('crypto')
+// const OAuth = require('oauth-1.0a')
 
-const oauth = OAuth({
-    consumer: { key: '<your consumer key>', secret: '<your consumer secret>' },
-    signature_method: 'HMAC-SHA1',
-    hash_function(base_string, key) {
-        return crypto
-            .createHmac('sha1', key)
-            .update(base_string)
-            .digest('base64')
-    },
-})
+// const oauth = OAuth({
+//     consumer: { key: '<your consumer key>', secret: '<your consumer secret>' },
+//     signature_method: 'HMAC-SHA1',
+//     hash_function(base_string, key) {
+//         return crypto
+//             .createHmac('sha1', key)
+//             .update(base_string)
+//             .digest('base64')
+//     },
+// })
 
 
-const apiBtn = $(`#apiBtn`);
+const searchForm = $(`#searchForm`);
+const searchField = $(`#searchField`);
 
-apiBtn.click(() => {
-    oauth.authorize(request, token)
+searchForm.submit((event) => {
+    event.preventDefault();
+    let searchText = searchField.val().split(` `);
+    let searchQuery = searchText.join(`%20`);
+    let searchUrl = `https://deezerdevs-deezer.p.rapidapi.com/search?q=${searchQuery}&index=0&limit=20`
 
-    $.ajax({
-        url: `https://api.audiomack.com/v1/request_token`,
-        method: `POST`
-    })
-        .then(function(response) {
-            console.log(response);
-        })
+    const settings = getRequest(searchUrl);
+    
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
 }) 
 
 
-const getTrack = () => {
+const getRequest = (searchUrl) => {
+    let settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": searchUrl,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "4158f96d1emsh29be4d938fb2c05p1b6561jsn48bbd9b8afa1",
+            "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
+        }
+    };
 
+    return settings;
 }
+
