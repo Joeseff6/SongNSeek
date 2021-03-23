@@ -1,5 +1,13 @@
 # Joseph Soria
 
+## Mon Mar 22 2021
+
+- Worked in class today
+    - Started using Deezer for API to pull information
+    - [success] Was able to use Deezer API to pull information (Artist/Album/Song)
+    - [success] Created list of options from search results
+    - [todo] Review async functions
+    - [todo] Write script for post requests to database
 ## Sun Mar 21 2021
 
 - Dead day, wasn't able to work on project due to other commitments
