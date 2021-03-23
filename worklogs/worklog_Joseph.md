@@ -1,5 +1,15 @@
 # Joseph Soria
 
+## Sat Mar 20 2021
+
+- Had class today to work on project
+    - Looked into APIs that allowed users to stream music
+    - Began writing front-end javascript using current html template
+        - Tested APIs
+- [blocker] Had to send requests to API creators for client key for auth
+- [learning] How to use auth and request tokens for API
+- [learning] How to use jquery again and run ajax method
+- [todo] Look into APIs to use for adding information to our database
 ## Fri Mar 19 2021
 
 - Met in the afternoon
