@@ -1,5 +1,10 @@
 # Joseph Soria
 
+## Thur Mar 18 2021
+
+- Met in the afternoon to create model files and review current front-end design
+- [success] Basic model files created
+- [todo] Do research on APIs for project
 ## Wed Mar 17 2021
 
 - Worked on front-end design (html/css) and reviewed models
