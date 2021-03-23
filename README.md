@@ -74,3 +74,4 @@ _So that I can listen to songs and customize playlists._
 ### References
 * https://www.w3schools.com/howto/howto_css_hero_image.asp
 * https://www.w3schools.com/cssref/pr_background-image.asp
+* https://www.geeksforgeeks.org/how-to-darken-an-image-using-css/
