@@ -1,11 +1,15 @@
 # Joseph Soria
 
+## Wed Mar 17 2021
+
+- Worked on front-end design (html/css) and reviewed models
+- [success] Submitted README for approval
+- [todo] Do research on APIs for project
 ## Tue Mar 16 2021
 
 - Met up via zoom call to work on diagram for database for submission
     - Used dbdiagram.io to create database diagram
     - [success] Submitted diagram for approval
-    - [success] Submitted README for approval
 
 - [todo] Create file structure so that server could run
 
