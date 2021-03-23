@@ -1,5 +1,10 @@
 # Joseph Soria
 
+## Sun Mar 21 2021
+
+- Dead day, wasn't able to work on project due to other commitments
+- [setback] Was rejected from audiomack on request for client key
+- [decision] Focus on client-side APIs to pull server data for database 
 ## Sat Mar 20 2021
 
 - Had class today to work on project
