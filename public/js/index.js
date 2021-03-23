@@ -16,6 +16,7 @@
 
 const searchForm = $(`#searchForm`);
 const searchField = $(`#searchField`);
+const buttonDiv = $(`#buttonDiv`);
 
 searchForm.submit((event) => {
     event.preventDefault();
@@ -26,6 +27,7 @@ searchForm.submit((event) => {
     const settings = getRequest(searchUrl);
     
     $.ajax(settings).done(function (response) {
+
         console.log(response);
         let searchObj = response.data.map((search) => {
             let searchObj = {
@@ -38,13 +40,22 @@ searchForm.submit((event) => {
                 song: search.title,
                 top50: search.artist.tracklist,
             };
-
-
             return searchObj;
         })
         console.log(searchObj);
+
+        createButtons(searchObj);
     });
-}) 
+});
+
+
+const createButtons = (searchObj) => {
+    for (let i = 0; i < searchObj.length-1; i++) {
+        let buttonEl = $(`<button/>`);
+        buttonEl.text(`${searchObj[i].artist}/${searchObj[i].song}/${searchObj[i].album}`).attr(`class`,`btn remove`).attr(`data-index`,`${i}`);
+        buttonDiv.append(buttonEl);
+    }
+}
 
 
 const getRequest = (searchUrl) => {
