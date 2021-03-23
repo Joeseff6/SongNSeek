@@ -27,6 +27,22 @@ searchForm.submit((event) => {
     
     $.ajax(settings).done(function (response) {
         console.log(response);
+        let searchObj = response.data.map((search) => {
+            let searchObj = {
+                artist: search.artist.name,
+                artistID: search.artist.id,
+                artistImage: search.artist.picture_big,
+                album: search.album.title,
+                albumId: search.album.id,
+                albumImage: search.album.cover_big,
+                song: search.title,
+                top50: search.artist.tracklist,
+            };
+
+
+            return searchObj;
+        })
+        console.log(searchObj);
     });
 }) 
 
