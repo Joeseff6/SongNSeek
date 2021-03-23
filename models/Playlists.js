@@ -13,7 +13,7 @@ Playlists.init(
     },
     personal: {
       type: DataTypes.STRING,
-      allowNull: false,
+      // allowNull: false,
       validate: {
         len: [8],
       },
@@ -26,8 +26,8 @@ Playlists.init(
     },
     length: {
       type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
+      // allowNull: false,
+      // defaultValue: DataTypes.NOW,
     },
     library_id: {
       type: DataTypes.INTEGER,
@@ -49,7 +49,7 @@ Playlists.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Playlists',
+    modelName: 'playlists',
   }
 );
 

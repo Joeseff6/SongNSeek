@@ -31,7 +31,7 @@ Library.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Library',
+    modelName: 'library',
     }
 );
 
