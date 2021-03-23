@@ -8,5 +8,5 @@ API Suggestions:
         * Track
         * Album
 
-* Soundcloud / Audiomack
+* feed.fm
     * Streaming music
