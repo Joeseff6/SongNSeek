@@ -11,6 +11,18 @@ Albums.init(
         primaryKey: true,
         autoIncrement: true,
     },
+    album_title: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    album_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    album_image: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
     artist_id: {
         type: DataTypes.INTEGER,
         references: {
