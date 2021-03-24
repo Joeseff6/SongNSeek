@@ -15,7 +15,7 @@ html {
     height: 100%;
 }
 
-button {
+.btn {
     color: white;
 }
 
@@ -24,6 +24,7 @@ button {
     background-color: black;
     margin: auto 3em;
     border-radius: 50px;
+    position: absolute;
     opacity: 0.8;
 }
 
@@ -53,7 +54,7 @@ img {
     font-weight: 700;
     font-size: 14px;
     letter-spacing: 1px;
-    background: rgba(136, 126, 126, 0.04);
+    /* background: rgba(136, 126, 126, 0.04); */
     padding: 10px 20px;
     border: none;
     border-radius: 20px;
@@ -111,7 +112,7 @@ form.form1 {
     font-family: 'Righteous', cursive;
     margin-left: 35%;
     font-size: 13px;
-    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 0 20px 1px rgb(255, 255, 255);
     text-align: center;
 }
 
