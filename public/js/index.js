@@ -15,14 +15,14 @@ searchForm.submit((event) => {
         console.log(response);
         let searchObj = response.data.map((search) => {
             let searchObj = {
-                artist: search.artist.name,
-                artistID: search.artist.id,
-                artistImage: search.artist.picture_big,
-                album: search.album.title,
-                albumId: search.album.id,
-                albumImage: search.album.cover_big,
+                artist_name: search.artist.name,
+                artist_songs: search.artist.tracklist,
+                artist_id: search.artist.id,
+                artist_image: search.artist.picture_big,
+                album_title: search.album.title,
+                album_id: search.album.id,
+                album_image: search.album.cover_big,
                 song: search.title,
-                top50: search.artist.tracklist,
             };
             return searchObj;
         })
@@ -67,7 +67,7 @@ const getRequest = (searchUrl) => {
 };
 
 const saveChoice = (userChoice) => {
-    fetch(`/api/songs`, {
+    fetch(`/api/options`, {
         method: `POST`,
         headers: {
             'Content-Type': 'application/json',
