@@ -2,6 +2,7 @@
 
 ## Wed Mar 24 2021
 - Will work on Handlebars
+- Continued working on Login and Sign in files
 
 ## Tues Mar 23 2021
 - Continued working on Login and Sign in files
