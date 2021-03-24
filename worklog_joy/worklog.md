@@ -1,5 +1,18 @@
 # Joy Umoekpo
 
+## Wed Mar 24 2021
+- Will work on Handlebars
+- Continued working on Login and Sign in files
+
+## Tues Mar 23 2021
+- Continued working on Login and Sign in files
+
+## Mon Mar 22 2021
+- Started working on Login and Sign in files
+
+## Sun Mar 21 2021
+- Finished homepage html for now
+
 ## Sat Mar 20 2021
 - Continued working on homepage in handlebars
 - Started working on login and sign up pages in handlebars
