@@ -1,13 +1,25 @@
-* {
-    font-family: 'Righteous', cursive;
-    color: white;
-}
-
 /* Sidebar #009688 */
 
 /* Header #00796B */
 
 /* Background #223843 */
+
+* {
+    font-family: 'Righteous', cursive;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.imgbox {
+    display: grid;
+    height: 100%;
+}
+.center-fit {
+    max-width: 100%;
+    max-height: 100vh;
+    margin: auto;
+}
 
 body {
     background-color: #223843;
@@ -37,6 +49,8 @@ div {
 
 img {
     /* filter: blur(0.1em); */
+    background-repeat: no-repeat;
+    background-size: auto;
 }
 
 .logMain {
