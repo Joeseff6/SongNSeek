@@ -34,6 +34,8 @@ searchForm.submit((event) => {
             let index = $(this).attr(`data-index`);
             let userChoice = searchObj[index];
             console.log(userChoice)
+
+            saveChoice(userChoice);
         })
     });
 });
@@ -47,8 +49,8 @@ const createButtons = (searchObj) => {
         .attr(`data-index`,`${i}`);
 
         buttonDiv.append(buttonEl);
-    }
-}
+    };
+};
 
 const getRequest = (searchUrl) => {
     let settings = {
@@ -61,6 +63,15 @@ const getRequest = (searchUrl) => {
             "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
         }
     };
-
     return settings;
-}
+};
+
+const saveChoice = (userChoice) => {
+    fetch(`/api/songs`, {
+        method: `POST`,
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userChoice),
+    });
+} 
