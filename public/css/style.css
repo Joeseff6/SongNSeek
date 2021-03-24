@@ -77,7 +77,6 @@ img {
 
 form.form1 {
     padding-top: 40px;
-    
 }
 
 .pass {
@@ -123,7 +122,7 @@ form.form1 {
 
 .forgot {
     text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
-    padding-top: 15px;
+    padding-top: 35px;
     text-align: center;
 }
 
@@ -245,4 +244,8 @@ a {
     margin-left: 46px;
     text-align: center;
     margin-bottom: 27px;
+}
+
+form.form2 {
+    padding-top: 40px;
 }
