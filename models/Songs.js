@@ -11,27 +11,28 @@ Songs.init(
         primaryKey: true,
         autoIncrement: true,
     },
-    song_request: {
+    // song_request: {
+    //     type: DataTypes.STRING,
+    //     allowNull: false,
+    //     validate: {
+    //         len: [8],
+    //     },
+    // },
+    artist_name: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate: {
-            len: [8],
-        },
+        // validate: {
+        //     len: [8],
+        // },    
     },
-    artist: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            len: [8],
-        },    },
     year_released: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
     },
-    time: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
+    // time: {
+    //     type: DataTypes.INTEGER,
+    //     allowNull: false,
+    // },
     playlist_id: {
         type: DataTypes.INTEGER,
         references: {
