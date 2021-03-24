@@ -14,23 +14,31 @@ Artist.init(
     artist_name: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate: {
-            len: [8],
-        },
+        // validate: {
+        //     len: [8],
+        // },
     },
     artist_songs: {
         type: DataTypes.STRING,
+        allowNull: true,
+        // validate: {
+        //     len: [8],
+        // },
+    },
+    artist_id: {
+        type: DataTypes.INTEGER,
         allowNull: false,
-        validate: {
-            len: [8],
-        },
+    },
+    artist_image: {
+        type: DataTypes.STRING,
+        allowNull: false,
     },
     album_releases: {
         type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            len: [8],
-        },
+        allowNull: true,
+        // validate: {
+        //     len: [8],
+        // },
     },
     library_id: {
         type: DataTypes.INTEGER,
