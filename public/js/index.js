@@ -1,19 +1,3 @@
-// https://api.audiomack.com/v1
-// const crypto = require('crypto')
-// const OAuth = require('oauth-1.0a')
-
-// const oauth = OAuth({
-//     consumer: { key: '<your consumer key>', secret: '<your consumer secret>' },
-//     signature_method: 'HMAC-SHA1',
-//     hash_function(base_string, key) {
-//         return crypto
-//             .createHmac('sha1', key)
-//             .update(base_string)
-//             .digest('base64')
-//     },
-// })
-
-
 const searchForm = $(`#searchForm`);
 const searchField = $(`#searchField`);
 const buttonDiv = $(`#buttonDiv`);
@@ -45,19 +29,26 @@ searchForm.submit((event) => {
         console.log(searchObj);
 
         createButtons(searchObj);
+
+        $(`.searchOption`).click(function () {
+            let index = $(this).attr(`data-index`);
+            let userChoice = searchObj[index];
+            console.log(userChoice)
+        })
     });
 });
-
 
 const createButtons = (searchObj) => {
     $(`.remove`).remove();
     for (let i = 0; i < searchObj.length-1; i++) {
         let buttonEl = $(`<button/>`);
-        buttonEl.text(`${searchObj[i].artist}/${searchObj[i].song}/${searchObj[i].album}`).attr(`class`,`btn remove`).attr(`data-index`,`${i}`);
+        buttonEl.text(`${searchObj[i].artist}/${searchObj[i].song}/${searchObj[i].album}`)
+        .attr(`class`,`btn remove searchOption`)
+        .attr(`data-index`,`${i}`);
+
         buttonDiv.append(buttonEl);
     }
 }
-
 
 const getRequest = (searchUrl) => {
     let settings = {
@@ -73,4 +64,3 @@ const getRequest = (searchUrl) => {
 
     return settings;
 }
-
