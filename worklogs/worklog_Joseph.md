@@ -1,5 +1,19 @@
 # Joseph Soria
 
+## Tues Mar 23 2021
+
+- Met with team on Zoom call
+    - Worked on Models to match API
+    - Wrote front-end logic in index.js to pull data from API
+- [success] Compeleted API pull request and wrote fetch function for POST request
+- [todo] Work with other API endpoints (Album/Artist/Track) to populate models
+- [need] Models completed and synced to database
+- [need] router.post in routes.js file in controllers directory
+    - router.post(`/artist`)
+    - router.post(`/album`)
+    - router.post(`/track`)
+    - router.post(`/general`)
+
 ## Mon Mar 22 2021
 
 - Worked in class today
