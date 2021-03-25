@@ -1,40 +1,10 @@
-<div class="row justify-space-between-md">
-    <div class="login-card">
-        <h2 class="page-title">Login</h2>
-        <form class="form login-form">
-            <div class="form-group">
-                <label for="email-login">Email:</label>
-                <input class="form-input" type="text" id="email-login" />
-            </div>
-            <div class="form-group">
-                <label for="password-login">Password:</label>
-                <input class="form-input" type="password" id="password-login" />
-            </div>
-            <div class="form-group">
-                <button class="btn btn-primary" type="submit">login</button>
-            </div>
-        </form>
-    </div>
-    <div class="login-card">
-        <h2 class="page-title">Signup</h2>
-        <form class="form signup-form">
-            <div class="form-group">
-                <label for="username-signup">Username:</label>
-                <input class="form-input" type="text" id="username-signup" />
-            </div>
-            <div class="form-group">
-                <label for="email-signup">Email:</label>
-                <input class="form-input" type="text" id="email-signup" />
-            </div>
-            <div class="form-group">
-                <label for="password-signup">Password:</label>
-                <input class="form-input" type="password" id="password-signup" />
-            </div>
-            <div class="form-group">
-                <button class="btn btn-primary" type="submit">signup</button>
-            </div>
-        </form>
-    </div>
+<div class="logMain">
+    <p class="log">Log In</p>
+    <form id="loginForm" class="form1">
+        <input id="email" class="email" type="email" placeholder="Email Address" required>
+        <input id="password" class="pass" type="password" placeholder="Password" required>
+        <button class="submit" type="submit">Log In</button>
+        <p class="forgot"><a href="#">Forgot Password?</p>
+        <p class="new"><a href="signup.html">Are you a new user? Sign up here!</p>
+    </form>
 </div>
-
-<script src="./js/login.js"></script>
