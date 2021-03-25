@@ -24,11 +24,13 @@
   <body style="background-color: #223843;">
   <div class="logMain">
     <p class="log">Log In</p>
-    <form class="form1">
-      <input class="un " type="text" placeholder="Username"required>
-      <input class="pass" type="password" placeholder="Password" required>
-      <a class="submit">Log In</a>
+    <form id="loginForm" class="form1">
+      <input id="email" class="email" type="email" placeholder="Email Address"required>
+      <input id="password" class="pass" type="password" placeholder="Password" required>
+      <button class="submit" type="submit">Log In</button>
       <p class="forgot"><a href="#">Forgot Password?</p>
+      <p class="new"><a href="signup.html">Are you a new user? Sign up here!</p>
+    </form>
     </div>
     <script src="./js/login.js"></script>
   </body>

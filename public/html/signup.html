@@ -24,13 +24,20 @@
 <body style="background-color: #223843;">
 <div class="signMain">
     <p class="sign">Sign Up</p>
-    <form class="form2">
-    <input class="name" type="text" placeholder="Enter your full name" required>
-    <input class="email" type="email" placeholder="Enter your email address"required>
-    <input class="signUn" type="text" placeholder="Username" required>
-    <input class="signPass" type="password" placeholder="Password" required>
-    <a class="signSubmit">Submit</a>
+    <div class="row>">
+        <div class="col text-align-center">
+            <p id="wrong">Something went wrong. Please try again.</p>
+        </div>
     </div>
+    <form id="signUpForm" class="form2">
+    <input id="name" class="name" type="text" placeholder="Enter your full name" required>
+    <input id="email" class="email" type="email" placeholder="Enter your email address"required>
+    <input id="username" class="username" type="text" placeholder="Username" required>
+    <input id="password" class="password" type="password" placeholder="Password" required>
+    <button class="signSubmit" type="submit">Submit</button>
+    <p class="old"><a href="login.html">Are you already a user? Login here!</p>
+    </form>
+</div>
     <script src="./js/login.js"></script>
 </body>
 </html>
