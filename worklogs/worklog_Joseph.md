@@ -1,5 +1,11 @@
 # Joseph Soria
 
+## Wed Mar 24 2021
+
+- Worked in class today
+    - Had discussion on models
+    - Worked on login/new user logic and worked on some apirouting
+    - Reviewed front end to see what needed changes for logic
 ## Tues Mar 23 2021
 
 - Met with team on Zoom call
