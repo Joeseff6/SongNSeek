@@ -36,10 +36,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-// TODO:For Joseph developing purposes. To remove after development
-require(`./develop/routes/apiRouting`)(app);
-require(`./develop/routes/htmlRouting`)(app);
-// ---------------------------------------------------------
 
 
 sequelize.sync({ force: false }).then(() => {
