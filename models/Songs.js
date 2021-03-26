@@ -11,12 +11,13 @@ Songs.init(
         primaryKey: true,
         autoIncrement: true,
     },
+    song_name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
     artist_name: {
         type: DataTypes.STRING,
         allowNull: false,
-        // validate: {
-        //     len: [8],
-        // },    
     },
     // year_released: {
     //     type: DataTypes.INTEGER,
