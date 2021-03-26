@@ -22,7 +22,7 @@
 }
 
 body {
-    background-color: #223843;
+    background-color: rgb(39, 39, 39);
     height: 100%;
 }
 
@@ -51,6 +51,10 @@ img {
     /* filter: blur(0.1em); */
     background-repeat: no-repeat;
     background-size: auto;
+}
+
+.carousel-item {
+    height: 100vh;
 }
 
 .logMain {

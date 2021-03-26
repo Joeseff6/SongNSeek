@@ -3,7 +3,6 @@ const { User, Library } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
-    console.log(`hey`);
     const userData = await User.create({
       username: req.body.username,
       email: req.body.email,
