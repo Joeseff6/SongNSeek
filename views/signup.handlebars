@@ -1,16 +1,23 @@
 <div class="signMain">
-    <p class="sign">Sign Up</p>
-    <div class="row>">
-        <div class="col text-align-center">
-            <p id="wrong">Something went wrong. Please try again.</p>
+    <div class="row">
+        <div class="row m-auto">
+            <p class="sign pt-2">Sign Up</p>
         </div>
+        <div class="row>">
+            <div class="col">
+                <p id="wrong" class="text-center mb-0"></p>
+            </div>
+        </div>
+        <form id="signUpForm" class="form2 pt-0">
+        <input id="name" class="name" type="text" placeholder="Enter your full name" required>
+        <input id="email" class="email" type="email" placeholder="Enter your email address"required>
+        <input id="username" class="username" type="text" placeholder="Username" required>
+        <input id="password" class="password mb-0" type="password" placeholder="Password" required>
+        <p class="mb-3 text-center" style="color: #009688;">(8 character minimum)</p>
+        <button class="signSubmit" type="submit">Submit</button>
+        <p class="old"><a href="/login">Are you already a user? Login here!</p>
+        </form>
     </div>
-    <form id="signUpForm" class="form2">
-    <input id="name" class="name" type="text" placeholder="Enter your full name" required>
-    <input id="email" class="email" type="email" placeholder="Enter your email address"required>
-    <input id="username" class="username" type="text" placeholder="Username" required>
-    <input id="password" class="password" type="password" placeholder="Password" required>
-    <button class="signSubmit" type="submit">Submit</button>
-    <p class="old"><a href="login.html">Are you already a user? Login here!</p>
-    </form>
 </div>
+
+<script src="js/newUser.js"></script>
