@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { libraryRoutes} = require('../../models');
 
+// library Routes
 router.get('/', (req, res) => {
   libraryRoutes.findAll({
     include: [{ model: libraryRoutes }],
