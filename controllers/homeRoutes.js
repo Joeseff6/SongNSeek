@@ -1,21 +1,28 @@
 const router = require('express').Router();
-const { Albums, Artist, Library, Playlists, Search, Songs } = require(`../models`)
+const { User, Albums, Artist, Library, Playlists, Search, Songs } = require(`../models`);
 
 router.get('/', (req, res) => {
     if (req.session.loggedIn) {
         res.render(`library-view`, { layout: `library` });
         return
     }
+
     res.render('homepage', { title: 'SongNSeek', layout: 'main' });
 })
 
-router.get(`/library`, (req,res) => {
+router.get(`/library`, async (req,res) => {
     if (!req.session.loggedIn) {
         res.render(`login`);
         return;
     }
+    const userData = await User.findOne({
+        where: {
+            id: req.session.userId,
+        },
+    });
+    const user = userData.get({plain: true});
 
-    res.render(`library-view`, { layout: `library` });
+    res.render(`library-view`, { layout: `library`, user } );
 })
 
 router.get(`/login`, (req,res) => {
