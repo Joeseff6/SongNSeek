@@ -40,6 +40,14 @@ searchForm.submit((event) => {
     });
 });
 
+function capitalize(text) {
+    let newText = text.charAt(0).toUpperCase() + text.slice(1);
+    $(`#username`).text(newText);
+    return;
+}
+
+capitalize($(`#username`).text())
+
 const createButtons = (searchObj) => {
     $(`.remove`).remove();
     for (let i = 0; i < searchObj.length-1; i++) {
