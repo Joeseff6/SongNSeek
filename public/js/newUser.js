@@ -12,18 +12,19 @@ const newUserHandler = async (event) => {
             body: JSON.stringify({ username, email, password }),
             headers: { 'Content-Type': 'application/json' },
         });
-        
+        console.log(response)
+
         if (response.ok) {
             // TODO: change route location once established
-            document.location.replace('/');
+            document.location.replace('/library');
         } else {
-            document.getElementById(`tryAgain`).innerHTML = `Something went wrong. 
-            Please check your information.`
+            document.getElementById(`wrong`).innerHTML = `Either email is in use,
+            or password is less than 8 characters.`
         }
     };
 };
 
 
 document
-.getElementById(`newUserForm`)
+.getElementById(`signUpForm`)
 .addEventListener(`submit`, newUserHandler)

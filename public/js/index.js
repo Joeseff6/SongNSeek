@@ -18,10 +18,10 @@ searchForm.submit((event) => {
                 artist_name: search.artist.name,
                 artist_songs: search.artist.tracklist,
                 artist_id: search.artist.id,
-                artist_image: search.artist.picture_big,
+                artist_image: search.artist.picture_small,
                 album_title: search.album.title,
                 album_id: search.album.id,
-                album_image: search.album.cover_big,
+                album_image: search.album.cover_small,
                 song: search.title,
             };
             return searchObj;

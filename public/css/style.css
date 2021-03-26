@@ -22,7 +22,7 @@
 }
 
 body {
-    background-color: rgb(39, 39, 39);
+    background-color: #223843;
     height: 100%;
 }
 
@@ -280,7 +280,6 @@ form.form2 {
 }
 
 #wrong {
-    display: none;
     color: #009688;
 }
 
