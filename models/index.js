@@ -1,84 +1,13 @@
-// const User = require('./User');
-// const Playlists = require('./Playlists');
-// const Songs = require('./Songs');
-// const Artist = require('./Artist');
-// const Albums = require('./Albums');
-// const Library = require('./Library');
-// const Search = require('./Search');
+const User = require('./User');
+const Playlists = require('./Playlists');
+const Songs = require('./Songs');
+const Artist = require('./Artist');
+const Albums = require('./Albums');
+const Library = require('./Library');
+const Search = require('./Search');
 
-<<<<<<< HEAD
-// // User
-// User.hasOne(Library, {
-//   foreignKey: 'user_id',
-//   onDelete: 'CASCADE'
-// });
 
-// // Songs
-// Search.hasMany(Songs, {
-//   foreignKey: 'search_id',
-//   onDelete: 'CASCADE'
-// });
 
-// Library.hasMany(Songs, {
-//   foreignKey: 'library_id',
-//   onDelete: 'CASCADE',
-//   onUpdate: 'CASCADE'
-// });
-
-// Artist.hasMany(Songs, {
-//   foreignKey: 'artist_id',
-//   onDelete: 'CASCADE',
-// });
-
-// Playlists.hasMany(Songs, {
-//   foreignKey: 'Playlists_id',
-//   onDelete: 'CASCADE',
-// });
-
-// // Artist
-// Search.hasMany(Artist, {
-//   foreignKey: 'search_id',
-//   onDelete: 'CASCADE'
-// });
-
-// Library.hasMany(Artist, {
-//   foreignKey: 'library_id',
-//   onDelete: 'CASCADE',
-//   onUpdate: 'CASCADE'
-// });
-
-// // Albums
-// Search.hasMany(Albums, {
-//   foreignKey: 'search_id',
-//   onDelete: 'CASCADE'
-// });
-
-// Library.hasMany(Albums, {
-//   foreignKey: 'library_id',
-//   onDelete: 'CASCADE',
-//   onUpdate: 'CASCADE'
-// });
-
-// Artist.hasMany(Albums, {
-//   foreignKey: 'artist_id',
-//   onDelete: 'CASCADE',
-// });
-
-// // Playlists
-// Search.hasMany(Playlists, {
-//   foreignKey: 'search_id',
-//   onDelete: 'CASCADE'
-// });
-
-// Library.hasMany(Playlists, {
-//   foreignKey: 'library_id',
-//   onDelete: 'CASCADE',
-//   onUpdate: 'CASCADE'
-// });
-
-// // Search
-// Library.hasOne(Search, {
-=======
 // User
 User.hasOne(Library, {
   foreignKey: 'user_id',
@@ -88,40 +17,45 @@ Library.belongsTo(User, {
   foreignKey: 'user_id',
 })
 
-
-Library.hasMany(Songs, {
-  foreignKey: 'library_id',
-  onUpdate: 'CASCADE'
+Library.belongsToMany(Songs, {
+  through: 'library_songs',
 });
-Songs.belongsToMany(Library, { through: "Library_Songs"})
+Songs.belongsToMany(Library, {
+  through: 'library_songs',
+});
 
-Library.hasMany(Playlists, {
-  foreignKey: 'library_id',
-  onUpdate: 'CASCADE'
+
+
+
+Library.belongsToMany(Playlists, {
+  through: 'library_playlist',
 });
 Playlists.belongsTo(Library, {
-  foreignKey: 'library_id',
+  foreignKey: 'Library_id',
   onUpdate: 'CASCADE'
 });
 
-Library.hasMany(Artist, {
-  foreignKey: 'library_id',
-  onDelete: 'CASCADE',
-  onUpdate: 'CASCADE'
+Library.belongsToMany(Artist, {
+  through:'library_artist',
 });
-Artist.belongsToMany(Library, { through: "Library_Artist"});
-
-Playlists.hasMany(Artist, {
-  foreignKey: 'Playlists_id',
-  onDelete: 'CASCADE',
+Artist.belongsToMany(Library, {
+  through: 'library_artist',
 });
-Artist.belongsToMany(Playlists, { through: "Playlists_Artist"});
 
-
-Playlists.hasMany(Songs, {
-  foreignKey: 'Playlists_id',
+Playlists.belongsToMany(Artist, {
+  through: 'playlist_artist',
 });
-Songs.belongsToMany(Playlists, { through: "Playlists_Songs"});
+Artist.belongsToMany(Playlists, { 
+  through: "playlist_artist",
+});
+
+
+Playlists.belongsToMany(Songs, {
+  through: 'playlists_songs',
+});
+Songs.belongsToMany(Playlists, { 
+  through: 'playlists_songs',
+});
 
 
 Library.hasMany(Search, {
@@ -133,84 +67,30 @@ Search.belongsTo(Library, {
 });
 
 
-Search.hasMany(Songs, {
-  foreignKey: 'search_id',
-  onDelete: 'CASCADE'
+Search.belongsToMany(Songs, {
+  through: 'search_songs',
 });
-Songs.belongsToMany(Search, { through: "Search_Songs"});
-
-
-Search.hasMany(Playlists, {
-  foreignKey: 'search_id',
+Songs.belongsToMany(Search, { 
+  through: "search_songs",
 });
-Playlists.belongsToMany(Search, { through: " Search_Playlist" });
 
 
-
-Search.hasMany(Artist, {
-  foreignKey: 'search_id',
+Search.belongsToMany(Playlists, {
+  through: 'search_playlist',
 });
-Artist.belongsToMany(Search, { through: "Search_Artist"});
+Playlists.belongsToMany(Search, { 
+  through: "search_playlist",
+});
 
-// // Songs
-// Search.hasMany(Songs, {
-//   foreignKey: 'search_id',
-//   onDelete: 'CASCADE'
-// });
 
-// Artist.hasMany(Songs, {
-  //   foreignKey: 'artist_id',
-  //   onDelete: 'CASCADE',
-  // });
-  
-  // Playlists.hasMany(Songs, {
-    //   foreignKey: 'Playlists_id',
-    //   onDelete: 'CASCADE',
-    // });
-    
-    // // Artist
-    // Search.hasMany(Artist, {
-      //   foreignKey: 'search_id',
-      //   onDelete: 'CASCADE'
-      // });
-      
-      
-      
-      // // Albums
-// Search.hasMany(Albums, {
-//   foreignKey: 'search_id',
-//   onDelete: 'CASCADE'
-// });
 
-// Library.hasMany(Albums, {
-//   foreignKey: 'library_id',
-//   onDelete: 'CASCADE',
-//   onUpdate: 'CASCADE'
-// });
+Search.belongsToMany(Artist, {
+  through: 'search_artist',
+});
+Artist.belongsToMany(Search, { 
+  through: "search_artist",
+});
 
-// Artist.hasMany(Albums, {
-//   foreignKey: 'artist_id',
-//   onDelete: 'CASCADE',
-// });
 
-// // Playlists
-// Search.hasMany(Playlists, {
-//   foreignKey: 'search_id',
-//   onDelete: 'CASCADE'
-// });
 
-// Playlists.belongsTo(Library, {
-//   foreignKey: 'library_id',
-//   onDelete: 'CASCADE',
-//   onUpdate: 'CASCADE'
-// });
-
-// // Search
-// Search.belongsTo(Library, {
->>>>>>> d478fb6e6b6e6b278189cc270959b8ba69a7536f
-//   foreignKey: 'library_id',
-//   onDelete: 'CASCADE',
-//   onUpdate: 'CASCADE'
-// });
-
-// module.exports = { User, Playlists, Songs, Artist, Albums, Library, Search };
+module.exports = { User, Playlists, Songs, Artist, Albums, Library, Search };

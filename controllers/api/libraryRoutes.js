@@ -26,6 +26,58 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.post('/artist', async (req, res) => {
+  try {
+    const newmusicRoutes = await musicRoutes.create({
+      ...req.body,
+      artist_id: req.session.user_id,
+    });
+
+    res.status(200).json(newmusicRoutes);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.post('/album', async (req, res) => {
+  try {
+    const newmusicRoutes = await musicRoutes.create({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
+
+    res.status(200).json(newmusicRoutes);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.post('/track', async (req, res) => {
+  try {
+    const newmusicRoutes = await musicRoutes.create({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
+
+    res.status(200).json(newmusicRoutes);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.post('/general', async (req, res) => {
+  try {
+    const newmusicRoutes = await musicRoutes.create({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
+
+    res.status(200).json(newmusicRoutes);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 router.delete('/:id', async (req, res) => {
   try {
     const musicRoutesData = await musicRoutes.destroy({
