@@ -58,38 +58,38 @@ Songs.belongsToMany(Playlists, {
 });
 
 
-Library.hasMany(Search, {
-  foreignKey: 'library_id',
-  onUpdate: 'CASCADE'
-});
-Search.belongsTo(Library, {
-  foreignKey: 'library_id',
-});
+// Library.hasMany(Search, {
+//   foreignKey: 'library_id',
+//   onUpdate: 'CASCADE'
+// });
+// Search.belongsTo(Library, {
+//   foreignKey: 'library_id',
+// });
 
 
-Search.belongsToMany(Songs, {
-  through: 'search_songs',
-});
-Songs.belongsToMany(Search, { 
-  through: "search_songs",
-});
+// Search.belongsToMany(Songs, {
+//   through: 'search_songs',
+// });
+// Songs.belongsToMany(Search, { 
+//   through: "search_songs",
+// });
 
 
-Search.belongsToMany(Playlists, {
-  through: 'search_playlist',
-});
-Playlists.belongsToMany(Search, { 
-  through: "search_playlist",
-});
+// Search.belongsToMany(Playlists, {
+//   through: 'search_playlist',
+// });
+// Playlists.belongsToMany(Search, { 
+//   through: "search_playlist",
+// });
 
 
 
-Search.belongsToMany(Artist, {
-  through: 'search_artist',
-});
-Artist.belongsToMany(Search, { 
-  through: "search_artist",
-});
+// Search.belongsToMany(Artist, {
+//   through: 'search_artist',
+// });
+// Artist.belongsToMany(Search, { 
+//   through: "search_artist",
+// });
 
 
 

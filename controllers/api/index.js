@@ -1,10 +1,10 @@
 const router = require('express').Router();
 const userRoutes = require('./userRoutes');
-const LibraryRoutes = require('./libraryRoutes');
+const libraryRoutes = require('./libraryRoutes');
 
 
 router.use('/users', userRoutes);
-router.use('/music', LibraryRoutes);
-
+router.use('/library', libraryRoutes);
+// router.use('/songs', songsRoutes);
 
 module.exports = router;

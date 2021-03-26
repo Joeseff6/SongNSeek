@@ -49,6 +49,10 @@ img {
     background-size: auto;
 }
 
+.carousel-item {
+    height: 100vh;
+}
+
 .logMain {
     width: 400px;
     height: 450px;
@@ -272,7 +276,6 @@ form.form2 {
 }
 
 #wrong {
-    display: none;
     color: #009688;
 }
 
