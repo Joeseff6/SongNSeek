@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Albums, Artist, Library, Playlists, Search, Songs } = require(`../models`)
 
 router.get('/', (reg, res) => {
-    res.render('signup', { title: 'Signup', layout: 'homepage' });
+    res.render('homepage', { title: 'SongNSeek', layout: 'main' });
 })
 
 router.get(`/library`, (req,res) => {
