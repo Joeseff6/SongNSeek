@@ -6,6 +6,8 @@ const Albums = require('./Albums');
 const Library = require('./Library');
 const Search = require('./Search');
 
+
+
 // User
 User.hasOne(Library, {
   foreignKey: 'user_id',
@@ -88,6 +90,7 @@ Search.belongsToMany(Artist, {
 Artist.belongsToMany(Search, { 
   through: "search_artist",
 });
+
 
 
 module.exports = { User, Playlists, Songs, Artist, Albums, Library, Search };

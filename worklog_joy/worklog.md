@@ -1,8 +1,9 @@
 # Joy Umoekpo
 
 ## Wed Mar 24 2021
-- Will work on Handlebars
+- Worked on Handlebars
 - Continued working on Login and Sign in files
+- Finished Login/Sign in files for now
 
 ## Tues Mar 23 2021
 - Continued working on Login and Sign in files
