@@ -6,3 +6,4 @@ router.use('/api', apiRoutes);
 router.use('/', homeRoutes);
 
 module.exports = router;
+//http://localhost:/3001/signup

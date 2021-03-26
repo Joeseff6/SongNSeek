@@ -1,26 +1,27 @@
 const router = require('express').Router();
-const { musicRoutes, Users } = require('../../models');
+const { libraryRoutes} = require('../../models');
 
+// library Routes
 router.get('/', (req, res) => {
-  musicRoutes.findAll({
-    include: [{ model: musicRoutes }],
+  libraryRoutes.findAll({
+    include: [{ model: libraryRoutes }],
   }).then((Category) => res.json(Category));
 })
 
 router.get('/:id', (req, res) => {
-  musicRoutes.findByPk(req.params.id).then((musicRoutes) => res.json(musicRoutes));
+  libraryRoutes.findByPk(req.params.id).then((libraryRoutes) => res.json(libraryRoutes));
 });
 
 
 
 router.post('/', async (req, res) => {
   try {
-    const newmusicRoutes = await musicRoutes.create({
+    const newlibraryRoutes = await libraryRoutes.create({
       ...req.body,
       user_id: req.session.user_id,
     });
 
-    res.status(200).json(newmusicRoutes);
+    res.status(200).json(newlibraryRoutes);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -28,12 +29,12 @@ router.post('/', async (req, res) => {
 
 router.post('/artist', async (req, res) => {
   try {
-    const newmusicRoutes = await musicRoutes.create({
+    const newlibraryRoutes = await libraryRoutes.create({
       ...req.body,
       artist_id: req.session.user_id,
     });
 
-    res.status(200).json(newmusicRoutes);
+    res.status(200).json(newlibraryRoutes);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -41,12 +42,12 @@ router.post('/artist', async (req, res) => {
 
 router.post('/album', async (req, res) => {
   try {
-    const newmusicRoutes = await musicRoutes.create({
+    const newlibraryRoutes = await libraryRoutes.create({
       ...req.body,
       user_id: req.session.user_id,
     });
 
-    res.status(200).json(newmusicRoutes);
+    res.status(200).json(newlibraryRoutes);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -54,12 +55,12 @@ router.post('/album', async (req, res) => {
 
 router.post('/track', async (req, res) => {
   try {
-    const newmusicRoutes = await musicRoutes.create({
+    const newlibraryRoutes = await libraryRoutes.create({
       ...req.body,
       user_id: req.session.user_id,
     });
 
-    res.status(200).json(newmusicRoutes);
+    res.status(200).json(newlibraryRoutes);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -67,12 +68,12 @@ router.post('/track', async (req, res) => {
 
 router.post('/general', async (req, res) => {
   try {
-    const newmusicRoutes = await musicRoutes.create({
+    const newlibraryRoutes = await libraryRoutes.create({
       ...req.body,
       user_id: req.session.user_id,
     });
 
-    res.status(200).json(newmusicRoutes);
+    res.status(200).json(newlibraryRoutes);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -80,19 +81,19 @@ router.post('/general', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   try {
-    const musicRoutesData = await musicRoutes.destroy({
+    const libraryRoutesData = await libraryRoutes.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
       },
     });
 
-    if (!musicRoutesData) {
-      res.status(404).json({ message: 'No musicRoutes found with this id!' });
+    if (!libraryRoutesData) {
+      res.status(404).json({ message: 'No libraryRoutes found with this id!' });
       return;
     }
 
-    res.status(200).json(musicRoutesData);
+    res.status(200).json(libraryRoutesData);
   } catch (err) {
     res.status(500).json(err);
   }
