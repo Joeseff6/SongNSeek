@@ -276,6 +276,7 @@ form.form2 {
     color: #009688;
 }
 
+<<<<<<< HEAD
 .navbar {
     background: #00796B;
 }
@@ -313,4 +314,18 @@ form.form2 {
     padding-right: 50px;
     padding-bottom: 50px;
     padding-left: 50px;
+=======
+#heading {
+background-color: white;
+}
+
+h1 {
+    color: black;
+}
+
+.flex-column {
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.911);
+    max-width: 200px;
+>>>>>>> 032f0a57daad255c4084ee1baafc977ea3c89ca0
 }

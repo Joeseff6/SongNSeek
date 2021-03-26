@@ -1,0 +1,12 @@
+API Suggestions:
+* Deezer
+    * Playlist creation
+
+* Last FM
+    * Search function
+        * Artist
+        * Track
+        * Album
+
+* feed.fm
+    * Streaming music

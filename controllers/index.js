@@ -1,10 +1,8 @@
 const router = require('express').Router();
-const api = require('./api')
+const apiRoutes = require('./api')
+const homeRoutes = require(`./homeRoutes`);
 
-router.use('/api', api);
-
-router.get('/', (reg, res) => {
-    res.send('Welcome to SongNSeek');
-})
+router.use('/api', apiRoutes);
+router.use('/', homeRoutes);
 
 module.exports = router;
