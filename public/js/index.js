@@ -22,7 +22,7 @@ searchForm.submit((event) => {
                 album_title: search.album.title,
                 album_id: search.album.id,
                 album_image: search.album.cover_small,
-                song: search.title,
+                song_name: search.title,
             };
             return searchObj;
         })
@@ -40,16 +40,25 @@ searchForm.submit((event) => {
     });
 });
 
+function capitalize(text) {
+    let newText = text.charAt(0).toUpperCase() + text.slice(1);
+    $(`#username`).text(newText);
+    return;
+}
+
+capitalize($(`#username`).text())
+
 const createButtons = (searchObj) => {
     $(`.remove`).remove();
     for (let i = 0; i < searchObj.length-1; i++) {
         let buttonEl = $(`<button/>`);
-        buttonEl.text(`${searchObj[i].artist}/${searchObj[i].song}/${searchObj[i].album}`)
+        buttonEl.text(`${searchObj[i].artist_name}/${searchObj[i].song_name}/${searchObj[i].album_title}`)
         .attr(`class`,`btn remove searchOption`)
         .attr(`data-index`,`${i}`);
 
         buttonDiv.append(buttonEl);
     };
+    searchField.val(``);
 };
 
 const getRequest = (searchUrl) => {
@@ -67,7 +76,7 @@ const getRequest = (searchUrl) => {
 };
 
 const saveChoice = (userChoice) => {
-    fetch(`/api/options`, {
+    fetch(`/api/library/music`, {
         method: `POST`,
         headers: {
             'Content-Type': 'application/json',

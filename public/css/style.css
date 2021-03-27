@@ -22,7 +22,7 @@
 }
 
 body {
-    background-color: #223843;
+    background-color: rgba(0, 0, 0, 0.568);
     height: 100%;
 }
 
@@ -283,9 +283,11 @@ form.form2 {
     color: #009688;
 }
 
-#heading {
-background-color: white;
+#heading, .list-group-item {
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 76%, rgba(0,0,0,0.1491947120645133) 100%, rgba(0,0,0,0) 100%);
 }
+
 
 h1 {
     color: black;
@@ -295,4 +297,10 @@ h1 {
     height: 100vh;
     background-color: rgba(255, 255, 255, 0.911);
     max-width: 200px;
+}
+
+#searchField {
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.192);
+    border: black 2px solid;
 }
