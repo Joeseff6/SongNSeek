@@ -316,6 +316,11 @@ form.form2 {
     padding-left: 50px;
 }
 
+
+#heading {
+background-color: white;
+}
+
 #heading, .list-group-item {
     background: rgb(255,255,255);
     background: linear-gradient(90deg, rgba(255,255,255,1) 76%, rgba(0,0,0,0.1491947120645133) 100%, rgba(0,0,0,0) 100%);
@@ -336,4 +341,15 @@ h1 {
     border-radius: 15px;
     background-color: rgba(0, 0, 0, 0.192);
     border: black 2px solid;
+
+}
+
+.artist-name {
+    color: white;
+    font-size: xx-large;
+    text-align: center;
+}
+
+.image {
+    border: white 2px solid;
 }

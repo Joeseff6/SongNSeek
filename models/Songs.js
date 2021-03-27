@@ -5,35 +5,36 @@ class Songs extends Model {}
 
 Songs.init(
     {
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true,
+
+    id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true,
+    },
+    song_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    song_name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    artist_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: `artist`,
+            key: `id`,
         },
-        song_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false
+    },
+    library_id: {
+        type: DataTypes.INTEGER,
+        references: {
+        model: 'library',
+        key: 'id',
         },
-        song_name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        artist_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: `artist`,
-                key: `id`,
-            },
-        },
-        library_id: {
-            type: DataTypes.INTEGER,
-            references: {
-            model: 'library',
-            key: 'id',
-            },
-        },
+    },
 },
     {
     sequelize,

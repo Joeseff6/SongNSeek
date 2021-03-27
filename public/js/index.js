@@ -20,10 +20,12 @@ searchForm.submit((event) => {
                 artist_name: search.artist.name,
                 artist_songs: search.artist.tracklist,
                 artist_id: search.artist.id,
-                artist_image: search.artist.picture_small,
+                artist_image_med: search.artist.picture_medium,
+                artist_image_big: search.artist.picture_big,
                 album_title: search.album.title,
                 album_id: search.album.id,
-                album_image: search.album.cover_small,
+                album_image_med: search.album.cover_medium,
+                album_image_big: search.album.cover_big,
                 song_name: search.title,
                 song_id: search.id,
             };
@@ -97,29 +99,8 @@ const saveChoice = async (userChoice) => {
         body: JSON.stringify(userChoice),
     });
 
-    // await fetch(`/api/library/artist`, {
-    //     method: `POST`,
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(userChoice),
-    // });
+    document.location.replace('/library/artists');
 
-    // await fetch(`/api/library/album`, {
-    //     method: `POST`,
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(userChoice),
-    // });
-
-    // await fetch(`/api/library/song`, {
-    //     method: `POST`,
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(userChoice),
-    // });
 } 
 
 const deleteArtist = async(artist_id) =>{
