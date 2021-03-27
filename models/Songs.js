@@ -19,6 +19,14 @@ Songs.init(
         type: DataTypes.STRING,
         allowNull: false,
     },
+    artist_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: `artist`,
+            key: `id`,
+        },
+    },
     library_id: {
         type: DataTypes.INTEGER,
         references: {
@@ -26,7 +34,6 @@ Songs.init(
         key: 'id',
         },
     },
-
 },
     {
     sequelize,
