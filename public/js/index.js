@@ -58,6 +58,7 @@ const createButtons = (searchObj) => {
 
         buttonDiv.append(buttonEl);
     };
+    searchField.val(``);
 };
 
 const getRequest = (searchUrl) => {
