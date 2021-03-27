@@ -113,3 +113,13 @@ const saveChoice = async (userChoice) => {
         body: JSON.stringify(userChoice),
     });
 } 
+
+const deleteArtist = async(artist_id) =>{
+    await fetch(`/api/library/artist`, {
+    method: 'DELETE',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(artist_id),
+});
+};
