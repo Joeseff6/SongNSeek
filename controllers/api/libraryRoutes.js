@@ -60,24 +60,18 @@ router.post('/song', async (req, res) => {
   }
 });
 
-router.delete('/:id', async (req, res) => {
-  try {
-    const libraryRoutesData = await libraryRoutes.destroy({
+router.delete('/:artist_id', async (req, res) => {
+  const { artist_id } = req.params;
+
+  const [err, trip] = await to(Artist.destroy({
       where: {
-        id: req.params.id,
-        user_id: req.session.user_id,
-      },
-    });
+        artist_id
+      }
+  }));
 
-    if (!libraryRoutesData) {
-      res.status(404).json({ message: 'No libraryRoutes found with this id!' });
-      return;
-    }
+  if (err) return res.status(500).json(err);
 
-    res.status(200).json(libraryRoutesData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
+  res.json(trip);
 });
 
 module.exports = router;

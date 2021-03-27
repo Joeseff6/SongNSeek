@@ -3,8 +3,8 @@
     <div class="album-details">
         <p>By: {{album.artist}}</p>
         <p>By: {{artist}}</p>
-        {{#each artist.albums as |album|}}
+        {{#each artist.album as |album|}}
         {{> album-details}}
         {{/each}}
     </div>
-</section> 
+</section>
