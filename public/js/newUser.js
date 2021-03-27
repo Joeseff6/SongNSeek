@@ -1,7 +1,7 @@
 const newUserHandler = async (event) => {
     event.preventDefault();
     
-    const username = document.getElementById(`name`).value.trim();
+    const username = document.getElementById(`username`).value.trim();
     const email = document.getElementById(`email`).value.trim();
     const password = document.getElementById(`password`).value.trim();
 
