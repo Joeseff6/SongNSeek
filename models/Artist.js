@@ -24,7 +24,11 @@ Artist.init(
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    artist_image: {
+    artist_image_med: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    artist_image_big: {
         type: DataTypes.STRING,
         allowNull: false,
     },

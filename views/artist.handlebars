@@ -1,8 +1,30 @@
 <section class="artist">
+<<<<<<< HEAD
+    <div class="row">
+    {{#each artists as |artist|}}
+        <div class="col">
+            <img class="mt-3 image" src="{{artist.artist_image_med}}">
+            <a href="/library/artists/{{artist.id}}" class="artist-name d-block">{{artist.artist_name}}</a>
+            <div class="artist-details">
+            </div>
+        </div>
+    {{/each}}
+    </div>
+
+
+    {{#if artist}}
+    <img class="image" src="{{artist.artist_image_big}}">
+    <h1 class="artist-name">{{artist.artist_name}}</h1>
+    <div class="artist-details">
+
+    </div>
+    {{/if}}
+=======
     <h3 class="artist-name">{{artist.name}}</h3>
     <div class="artist-details">
         {{#each artist as |album|}}
         {{> artist-details}}
         {{/each}}
     </div>
+>>>>>>> 32b945f2246157617340e6faf6610d638b3c8895
 </section>

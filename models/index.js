@@ -20,7 +20,6 @@ Songs.belongsToMany(Library, {
   through: 'library_songs',
 });
 
-
 Library.belongsToMany(Artist, {
   through:'library_artist',
   onDelete: `CASCADE`

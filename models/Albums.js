@@ -19,9 +19,21 @@ Albums.init(
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    album_image: {
+    album_image_med: {
         type: DataTypes.STRING,
         allowNull: false,
+    },
+    album_image_big: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    artist_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: `artist`,
+            key: `id`,
+        },
     },
     library_id: {
         type: DataTypes.INTEGER,
