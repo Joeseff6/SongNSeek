@@ -30,10 +30,6 @@ html {
     background-color: #223843;
 }
 
-div {
-    
-}
-
 .btn {
     color: white;
 }
@@ -283,9 +279,51 @@ form.form2 {
     color: #009688;
 }
 
+.navbar {
+    background: #00796B;
+}
+
+.navbar-brand {
+    color: maroon;
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color:maroon;
+}
+
+.card-deck {
+    background: #223843;
+    padding-top: 25px;
+}
+
+.card-text {
+    color: maroon;
+    padding: 10px;
+}
+
+.card-title {
+    color: maroon;
+    padding: 10px;
+}
+
+.cards {
+    background-color: #223843;
+    padding-top: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+=======
+#heading {
+background-color: white;
+=======
 #heading, .list-group-item {
     background: rgb(255,255,255);
     background: linear-gradient(90deg, rgba(255,255,255,1) 76%, rgba(0,0,0,0.1491947120645133) 100%, rgba(0,0,0,0) 100%);
+>>>>>>> 59a791e52a4eb635692af58ec7536b8b367f33b3
 }
 
 
@@ -303,4 +341,5 @@ h1 {
     border-radius: 15px;
     background-color: rgba(0, 0, 0, 0.192);
     border: black 2px solid;
+>>>>>>> 59a791e52a4eb635692af58ec7536b8b367f33b3
 }

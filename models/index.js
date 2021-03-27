@@ -65,7 +65,7 @@ Artist.belongsToMany(Albums, {
 });
 
 Albums.belongsToMany(Artist, {
-  through: 'artist_albmus'
+  through: 'artist_albums'
 });
 
 
