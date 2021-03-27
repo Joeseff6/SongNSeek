@@ -1,4 +1,5 @@
 <section class="artist">
+<<<<<<< HEAD
     <div class="row">
     {{#each artists as |artist|}}
         <div class="col">
@@ -18,4 +19,12 @@
 
     </div>
     {{/if}}
+=======
+    <h3 class="artist-name">{{artist.name}}</h3>
+    <div class="artist-details">
+        {{#each artist as |album|}}
+        {{> artist-details}}
+        {{/each}}
+    </div>
+>>>>>>> 32b945f2246157617340e6faf6610d638b3c8895
 </section>
