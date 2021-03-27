@@ -29,6 +29,7 @@ Songs.belongsToMany(Library, {
 
 Library.belongsToMany(Playlists, {
   through: 'library_playlist',
+  onDelete: `CASCADE`
 });
 Playlists.belongsTo(Library, {
   foreignKey: 'Library_id',
@@ -37,9 +38,11 @@ Playlists.belongsTo(Library, {
 
 Library.belongsToMany(Artist, {
   through:'library_artist',
+  onDelete: `CASCADE`
 });
 Artist.belongsToMany(Library, {
   through: 'library_artist',
+  onDelete: `CASCADE`
 });
 
 Playlists.belongsToMany(Artist, {
@@ -57,40 +60,13 @@ Songs.belongsToMany(Playlists, {
   through: 'playlists_songs',
 });
 
+Artist.belongsToMany(Albums, { 
+  through: 'artist_albums',
+});
 
-// Library.hasMany(Search, {
-//   foreignKey: 'library_id',
-//   onUpdate: 'CASCADE'
-// });
-// Search.belongsTo(Library, {
-//   foreignKey: 'library_id',
-// });
-
-
-// Search.belongsToMany(Songs, {
-//   through: 'search_songs',
-// });
-// Songs.belongsToMany(Search, { 
-//   through: "search_songs",
-// });
-
-
-// Search.belongsToMany(Playlists, {
-//   through: 'search_playlist',
-// });
-// Playlists.belongsToMany(Search, { 
-//   through: "search_playlist",
-// });
-
-
-
-// Search.belongsToMany(Artist, {
-//   through: 'search_artist',
-// });
-// Artist.belongsToMany(Search, { 
-//   through: "search_artist",
-// });
-
+Albums.belongsToMany(Artist, {
+  through: 'artist_albmus'
+});
 
 
 module.exports = { User, Playlists, Songs, Artist, Albums, Library, Search };

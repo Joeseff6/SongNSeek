@@ -2,11 +2,13 @@ const searchForm = $(`#searchForm`);
 const searchField = $(`#searchField`);
 const buttonDiv = $(`#buttonDiv`);
 
+capitalize($(`#username`).text());
+
 searchForm.submit((event) => {
     event.preventDefault();
     let searchText = searchField.val().split(` `);
     let searchQuery = searchText.join(`%20`);
-    let searchUrl = `https://deezerdevs-deezer.p.rapidapi.com/search?q=${searchQuery}&index=0&limit=20`
+    let searchUrl = `https://deezerdevs-deezer.p.rapidapi.com/search?q=${searchQuery}&index=0&limit=15`
 
     const settings = getRequest(searchUrl);
     
@@ -23,6 +25,7 @@ searchForm.submit((event) => {
                 album_id: search.album.id,
                 album_image: search.album.cover_small,
                 song_name: search.title,
+                song_id: search.id,
             };
             return searchObj;
         })
@@ -46,10 +49,20 @@ function capitalize(text) {
     return;
 }
 
-capitalize($(`#username`).text())
+
 
 const createButtons = (searchObj) => {
     $(`.remove`).remove();
+
+    if (searchObj.length === 0) {
+        let buttonEl = $(`<button/>`);
+        buttonEl.text(`No results found!`)
+        .attr(`class`,`btn remove`);
+        buttonDiv.append(buttonEl);
+        searchField.val(``);
+        return;
+    }
+
     for (let i = 0; i < searchObj.length-1; i++) {
         let buttonEl = $(`<button/>`);
         buttonEl.text(`${searchObj[i].artist_name}/${searchObj[i].song_name}/${searchObj[i].album_title}`)
@@ -75,8 +88,24 @@ const getRequest = (searchUrl) => {
     return settings;
 };
 
-const saveChoice = (userChoice) => {
-    fetch(`/api/library/music`, {
+const saveChoice = async (userChoice) => {
+    await fetch(`/api/library/artist`, {
+        method: `POST`,
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userChoice),
+    });
+
+    await fetch(`/api/library/album`, {
+        method: `POST`,
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userChoice),
+    });
+
+    await fetch(`/api/library/album`, {
         method: `POST`,
         headers: {
             'Content-Type': 'application/json',

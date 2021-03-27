@@ -11,6 +11,11 @@ Songs.init(
         primaryKey: true,
         autoIncrement: true,
     },
+    song_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        unique: true,
+    },
     song_name: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -19,16 +24,9 @@ Songs.init(
         type: DataTypes.STRING,
         allowNull: false,
     },
-    // year_released: {
-    //     type: DataTypes.INTEGER,
-    //     allowNull: true,
-    // },
-    // time: {
-    //     type: DataTypes.INTEGER,
-    //     allowNull: false,
-    // },
     playlist_id: {
         type: DataTypes.INTEGER,
+        allowNull: true,
         references: {
         model: 'playlists',
         key: 'id',
@@ -48,13 +46,7 @@ Songs.init(
         key: 'id',
         },
     },
-    // search_id: {
-    //     type: DataTypes.INTEGER,
-    //     references: {
-    //     model: 'search',
-    //     key: 'id',
-    //     },
-    // },
+
 },
     {
     sequelize,

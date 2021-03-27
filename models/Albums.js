@@ -18,6 +18,7 @@ Albums.init(
     album_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        unique: true,
     },
     album_image: {
         type: DataTypes.STRING,
@@ -27,7 +28,7 @@ Albums.init(
         type: DataTypes.INTEGER,
         references: {
         model: 'artist',
-        key: 'id',
+        key: 'artist_id',
         },
     },
     library_id: {
@@ -37,13 +38,6 @@ Albums.init(
         key: 'id',
         },
     },
-    // search_id: {
-    //     type: DataTypes.INTEGER,
-    //     references: {
-    //     model: 'search',
-    //     key: 'id',
-    //     },
-    // },
 },
     {
     sequelize,
