@@ -89,7 +89,7 @@ const getRequest = (searchUrl) => {
 };
 
 const saveChoice = async (userChoice) => {
-    await fetch(`/api/library/artist`, {
+        await fetch(`/api/library/`, {
         method: `POST`,
         headers: {
             'Content-Type': 'application/json',
@@ -97,21 +97,29 @@ const saveChoice = async (userChoice) => {
         body: JSON.stringify(userChoice),
     });
 
-    await fetch(`/api/library/album`, {
-        method: `POST`,
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(userChoice),
-    });
+    // await fetch(`/api/library/artist`, {
+    //     method: `POST`,
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(userChoice),
+    // });
 
-    await fetch(`/api/library/album`, {
-        method: `POST`,
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(userChoice),
-    });
+    // await fetch(`/api/library/album`, {
+    //     method: `POST`,
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(userChoice),
+    // });
+
+    // await fetch(`/api/library/song`, {
+    //     method: `POST`,
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(userChoice),
+    // });
 } 
 
 const deleteArtist = async(artist_id) =>{

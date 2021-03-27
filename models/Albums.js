@@ -18,18 +18,10 @@ Albums.init(
     album_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        unique: true,
     },
     album_image: {
         type: DataTypes.STRING,
         allowNull: false,
-    },
-    artist_id: {
-        type: DataTypes.INTEGER,
-        references: {
-        model: 'artist',
-        key: 'artist_id',
-        },
     },
     library_id: {
         type: DataTypes.INTEGER,

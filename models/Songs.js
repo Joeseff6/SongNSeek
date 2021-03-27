@@ -13,31 +13,11 @@ Songs.init(
     },
     song_id: {
         type: DataTypes.INTEGER,
-        allowNull: false,
-        unique: true,
+        allowNull: false
     },
     song_name: {
         type: DataTypes.STRING,
         allowNull: false,
-    },
-    artist_name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    playlist_id: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        references: {
-        model: 'playlists',
-        key: 'id',
-        },
-    },
-    artist_id: {
-        type: DataTypes.INTEGER,
-        references: {
-        model: 'artist',
-        key: 'id',
-        },
     },
     library_id: {
         type: DataTypes.INTEGER,

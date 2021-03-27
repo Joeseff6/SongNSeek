@@ -23,7 +23,6 @@ Artist.init(
     artist_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        unique: true,
     },
     artist_image: {
         type: DataTypes.STRING,
