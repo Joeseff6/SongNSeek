@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Albums, Artist, Library, Playlists, Search, Songs } = require(`../models`);
+const { User, Albums, Artist, Library, Songs } = require(`../models`);
 
 router.get('/', (req, res) => {
     if (req.session.loggedIn) {
@@ -21,6 +21,10 @@ router.get(`/library`, async (req,res) => {
         },
     });
     const user = userData.get({plain: true});
+
+    const artists = await Artist.aggregate(`artist_name`, `DISTINCT`, {plain: false}).then(function(response) {
+        return response;
+    })
 
     res.render(`library-view`, { layout: `library`, user } );
 })
