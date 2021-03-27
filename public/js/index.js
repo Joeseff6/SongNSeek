@@ -1,6 +1,6 @@
 const searchForm = $(`#searchForm`);
 const searchField = $(`#searchField`);
-const buttonDiv = $(`#buttonDiv`);
+const list = $(`#list`);
 
 capitalize($(`#username`).text());
 
@@ -33,7 +33,7 @@ searchForm.submit((event) => {
         })
         console.log(searchObj);
 
-        createButtons(searchObj);
+        createList(searchObj);
 
         $(`.searchOption`).click(function () {
             let index = $(this).attr(`data-index`);
@@ -52,29 +52,30 @@ function capitalize(text) {
 }
 
 
-
-const createButtons = (searchObj) => {
+const createList = (searchObj) => {
     $(`.remove`).remove();
 
     if (searchObj.length === 0) {
-        let buttonEl = $(`<button/>`);
-        buttonEl.text(`No results found!`)
+        let listEl = $(`<li/>`);
+        listEl.text(`No results found!`)
         .attr(`class`,`btn remove`);
-        buttonDiv.append(buttonEl);
+        list.append(listEl);
         searchField.val(``);
         return;
     }
 
     for (let i = 0; i < searchObj.length-1; i++) {
-        let buttonEl = $(`<button/>`);
-        buttonEl.text(`${searchObj[i].artist_name}/${searchObj[i].song_name}/${searchObj[i].album_title}`)
-        .attr(`class`,`btn remove searchOption`)
-        .attr(`data-index`,`${i}`);
+        let listEl = $(`<li/>`);
+        listEl.text(`${searchObj[i].artist_name}/${searchObj[i].song_name}/${searchObj[i].album_title}`)
+        .attr(`class`,`btn remove searchOption list-group-item`)
+        .attr(`data-index`,`${i}`)
+        
 
-        buttonDiv.append(buttonEl);
+        list.append(listEl);
     };
     searchField.val(``);
 };
+
 
 const getRequest = (searchUrl) => {
     let settings = {
