@@ -1,0 +1,10 @@
+<section class="container">
+    <h3 class="album-name">{{album.name}}</h3>
+    <div class="album-details">
+        <p>By: {{album.artist}}</p>
+        <p>By: {{artist}}</p>
+        {{#each artist.albums as |album|}}
+        {{> album-details}}
+        {{/each}}
+    </div>
+</section> 
