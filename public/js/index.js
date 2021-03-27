@@ -104,4 +104,12 @@ const saveChoice = async (userChoice) => {
         },
         body: JSON.stringify(userChoice),
     });
+
+    await fetch(`/api/library/album`, {
+        method: `POST`,
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userChoice),
+    });
 } 
