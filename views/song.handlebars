@@ -1,9 +1,8 @@
-<section class="song">
-    <h3 class="song-name">{{song.title}}</h3>
-    <div class="song-details">
-        <p>By: {{song.artist}}</p>
-        {{#!--{{#each artist.albums as |album|}}
-        {{> album-details}}
-        {{/each}}
+<section class="songs">
+    {{#each songs as |songs|}}
+    <img src="{{songs.artist_image}}">
+    <a href="/library/songs/{{artist.id}}" class="song-name">{{song.songs_name}}</a>
+    <div class="songs-details">
     </div>
+    {{/each}}
 </section>
