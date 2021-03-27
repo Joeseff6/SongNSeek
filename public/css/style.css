@@ -22,7 +22,7 @@
 }
 
 body {
-    background-color: #223843;
+    background-color: rgba(0, 0, 0, 0.568);
     height: 100%;
 }
 
@@ -283,9 +283,11 @@ form.form2 {
     color: #009688;
 }
 
-#heading {
-background-color: white;
+#heading, .list-group-item {
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 76%, rgba(0,0,0,0.1491947120645133) 100%, rgba(0,0,0,0) 100%);
 }
+
 
 h1 {
     color: black;
