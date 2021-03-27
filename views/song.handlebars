@@ -1,0 +1,26 @@
+<section class="album">
+    <div class="row">
+    {{#each songs as |song|}}
+        <div class="col">
+            <img class="mt-3 group-image" src="{{song.artist.image_med}}">
+            <a style="font-size: large;" href="/library/songs/{{song.id}}" class="artist-name d-block">{{song.song_name}}</a>
+            <div class="artist-details">
+            </div>
+        </div>
+    {{/each}}
+
+    {{#if song}}
+    <div class="row mt-2">
+        <div class="col">
+            <img class="solo-image" src="{{song.artist.image_big}}">
+        </div>
+        <div class="col">
+            <h1 class="artist-name my-2">Song Name: {{song.song_name}}</h1>
+            <h3 class="my-2">Created by Artist: {{song.artist.artist_name}}</h3> 
+
+        </div>
+    </div>
+    {{/if}}
+    </div>
+
+</section>
