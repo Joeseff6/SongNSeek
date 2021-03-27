@@ -279,9 +279,7 @@ form.form2 {
     color: #009688;
 }
 
-.navbar {
-    background: #00796B;
-}
+
 
 .navbar-brand {
     color: maroon;
@@ -318,6 +316,7 @@ form.form2 {
     padding-left: 50px;
 }
 
+
 #heading {
 background-color: white;
 }
@@ -342,6 +341,7 @@ h1 {
     border-radius: 15px;
     background-color: rgba(0, 0, 0, 0.192);
     border: black 2px solid;
+
 }
 
 .artist-name {

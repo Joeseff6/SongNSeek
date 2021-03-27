@@ -5,6 +5,7 @@ class Songs extends Model {}
 
 Songs.init(
     {
+
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,

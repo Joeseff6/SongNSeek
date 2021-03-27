@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Albums, Artist, Library, Songs, User} = require('../../models');
 
 // library Routes
+
 router.post(`/`, async (req,res) => {
   try {
     const artistData = await Artist.create({
@@ -38,6 +39,7 @@ router.post(`/`, async (req,res) => {
 })
 
 
+
 router.delete('/:id', async (req, res) => {
   try {
     const libraryRoutesData = await libraryRoutes.destroy({
@@ -50,5 +52,6 @@ router.delete('/:id', async (req, res) => {
 
   res.json(trip);
 });
+
 
 module.exports = router;
