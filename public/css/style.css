@@ -279,10 +279,6 @@ form.form2 {
     color: #009688;
 }
 
-.navbar {
-    background: #00796B;
-}
-
 .navbar-brand {
     color: maroon;
 }
@@ -347,7 +343,6 @@ h1 {
 .artist-name {
     color: white;
     font-size: xx-large;
-    text-align: center;
 }
 
 .image {
