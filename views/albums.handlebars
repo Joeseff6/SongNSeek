@@ -1,8 +1,27 @@
 <section class="album">
+    <div class="row">
     {{#each albums as |album|}}
-    <img src="{{album.album_image}}">
-    <a href="/library/albums/{{album.id}}" class="artist-name">{{album.artist_name}}</a>
-    <div class="artist-details">
-    </div>
-    {{/each}}
+        <div class="col">
+            <img class="mt-3 group-image" src="{{album.image_med}}">
+            <a style="font-size: large;" href="/library/albums/{{album.id}}" class="artist-name d-block">{{album.album_title}}</a>
+            <div class="artist-details">
+            </div>
+        </div>
+    {{/each}}
+
+    {{#if album}}
+    <div class="row mt-2">
+        <div class="col">
+            <img class="solo-image" src="{{album.image_big}}">
+        </div>
+        <div class="col">
+            <h1 class="artist-name my-2">Album Title: {{album.album_title}}</h1>
+            <h3 class="my-2">Created by Artist: {{album.artist.artist_name}}</h3> 
+            <h3 class="my-2">{{album.album_title}}'s Deezer Page:</h3>      
+            <a class="my-2" href="https://deezer.com/us/album/{{album.album_id}}">https://deezer.com/us/album/{{album.album_id}}</a>
+        </div>
+    </div>
+    {{/if}}
+    </div>
+
 </section>

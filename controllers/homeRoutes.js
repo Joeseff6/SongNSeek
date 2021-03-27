@@ -44,12 +44,21 @@ router.get(`/library/artists`, async (req,res) => {
     });
 
     const user = userData.get({plain: true});
-    const artistData = await Artist.findAll();
+    const artistData = await Artist.findAll({
+        where: {
+            library_id: req.session.libraryId,
+        },
+        include: [{
+            model: Songs,
+        },
+        {
+            model: Albums,
+        }],
+    });
     const artists = artistData.map(artists => {
         return artists.get({plain: true});
     });
 
-    console.log(artists)
     res.render(`artist`, { layout: `library`, user, artists } );
 })
 
@@ -68,7 +77,6 @@ router.get(`/library/artists/:id`, async (req,res) => {
     const artistData = await Artist.findByPk(req.params.id, {
         include: [{
             model: Songs,
-            attributes: [`song_name`],
         },
         {
             model: Albums,
@@ -77,9 +85,109 @@ router.get(`/library/artists/:id`, async (req,res) => {
     });
     const artist = artistData.get({plain: true});
 
-    console.log(artist)
     res.render(`artist`, { layout: `library`, user, artist } );
 })
+
+router.get(`/library/albums`, async (req,res) => {
+    if (!req.session.loggedIn) {
+        res.render(`login`);
+        return;
+    };
+    const userData = await User.findOne({
+        where: {
+            id: req.session.userId,
+        },
+    });
+
+    const user = userData.get({plain: true});
+    const albumData = await Albums.findAll({
+        where: {
+            library_id: req.session.libraryId,
+        },
+        include: {
+            model: Artist,
+        },
+    });
+    const albums = albumData.map(albums => {
+        return albums.get({plain: true});
+    });
+
+    res.render(`albums`, { layout: `library`, user, albums } );
+})
+
+router.get(`/library/albums/:id`, async (req,res) => {
+    if (!req.session.loggedIn) {
+        res.render(`login`);
+        return;
+    };
+    const userData = await User.findOne({
+        where: {
+            id: req.session.userId,
+        },
+    });
+
+    const user = userData.get({plain: true});
+    const albumData = await Albums.findByPk(req.params.id, {
+        include: {
+            model: Artist,
+        },
+    });
+    const album = albumData.get({plain: true});
+
+    res.render(`albums`, { layout: `library`, user, album } );
+})
+
+router.get(`/library/songs`, async (req,res) => {
+    if (!req.session.loggedIn) {
+        res.render(`login`);
+        return;
+    };
+    const userData = await User.findOne({
+        where: {
+            id: req.session.userId,
+        },
+    });
+
+    const user = userData.get({plain: true});
+    const songData = await Songs.findAll({
+        where: {
+            library_id: req.session.libraryId,
+        },
+        include: {
+            model: Artist,
+        },
+    });
+    const songs = songData.map(songs => {
+        return songs.get({plain: true});
+    });
+
+    console.log(songs)
+    res.render(`song`, { layout: `library`, user, songs } );
+})
+
+router.get(`/library/songs/:id`, async (req,res) => {
+    if (!req.session.loggedIn) {
+        res.render(`login`);
+        return;
+    };
+    const userData = await User.findOne({
+        where: {
+            id: req.session.userId,
+        },
+    });
+
+    const user = userData.get({plain: true});
+    const songData = await Songs.findByPk(req.params.id, {
+        include: {
+            model: Artist,
+        },
+    });
+    const song = songData.get({plain: true});
+
+    console.log(song)
+    res.render(`song`, { layout: `library`, user, song } );
+})
+
 
 router.get(`/login`, (req,res) => {
     if (req.session.loggedIn) {

@@ -13,6 +13,27 @@ Library.belongsTo(User, {
   foreignKey: 'user_id',
 })
 
+Artist.hasMany(Songs, {
+  foreignKey: `art_id`,
+  onDelete: `CASCADE`,
+});
+
+Songs.belongsTo(Artist, {
+  foreignKey: `art_id`,
+  onDelete: `CASCADE`,
+});
+
+Artist.hasMany(Albums, {
+  foreignKey: `artist_id`,
+  onDelete: `CASCADE`,
+});
+
+Albums.belongsTo(Artist, {
+  foreignKey: `artist_id`,
+  onDelete: `CASCADE`,
+});
+
+
 Library.belongsToMany(Songs, {
   through: 'library_songs',
 });
@@ -29,20 +50,5 @@ Artist.belongsToMany(Library, {
   onDelete: `CASCADE`
 });
 
-Artist.belongsToMany(Albums, { 
-  through: 'artist_albums',
-});
-
-Albums.belongsToMany(Artist, {
-  through: 'artist_albums'
-});
-
-Artist.belongsToMany(Songs, { 
-  through: 'artist_songs',
-});
-
-Songs.belongsToMany(Artist, {
-  through: 'artist_songs'
-});
 
 module.exports = { User, Songs, Artist, Albums, Library };

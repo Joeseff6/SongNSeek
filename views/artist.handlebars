@@ -1,8 +1,38 @@
-<section class="artist">
-    {{#each artists as |artist|}}
-    <img src="{{artist.artist_image}}">
-    <a href="/library/artists/{{artist.id}}" class="artist-name">{{artist.artist_name}}</a>
-    <div class="artist-details">
-    </div>
-    {{/each}}
-</section>on>
+<section class="artist">
+    <div class="row">
+    {{#each artists as |artist|}}
+        <div class="col">
+            <img class="mt-3 group-image" src="{{artist.image_med}}">
+            <a style="font-size: large;" href="/library/artists/{{artist.id}}" class="artist-name d-block">{{artist.artist_name}}</a>
+            <div class="artist-details">
+            </div>
+        </div>
+    {{/each}}
+    </div>
+
+
+    {{#if artist}}
+    <div class="row mt-2">
+        <div class="col">
+            <img class="solo-image" src="{{artist.image_big}}">
+        </div>
+        <div class="col">
+            <h1 class="artist-name my-2">Artist Name: {{artist.artist_name}}</h1>
+            <h3 class="my-2">Your selected songs:</h3>
+            {{#each artist.songs as |song|}}
+            {{> artist-details}}
+            {{/each}}    
+            <h3 class="my-2">Your selected albums:</h3>
+            {{#each artist.albums as |album|}}
+            {{> album-details}}
+            {{/each}}    
+            <h3 class="my-2">{{artist.artist_name}}'s Top 50 API:</h3>      
+            <a href="{{artist.artist_songs}}">{{artist.artist_songs}}</h4>
+            <br>
+            <h3 class="my-2">{{artist.artist_name}}'s Deezer Page:</h3>      
+            <a class="my-2" href="https://deezer.com/search/{{artist.artist_name}}">https://deezer.com/search/{{artist.artist_name}}</a>
+        </div>
+    </div>
+
+    {{/if}}
+</section>

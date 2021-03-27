@@ -20,7 +20,7 @@ Songs.init(
         type: DataTypes.STRING,
         allowNull: false,
     },
-    artist_id: {
+    art_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {

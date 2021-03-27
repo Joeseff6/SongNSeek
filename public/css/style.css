@@ -279,8 +279,6 @@ form.form2 {
     color: #009688;
 }
 
-
-
 .navbar-brand {
     color: maroon;
 }
@@ -324,8 +322,13 @@ background-color: white;
 #heading, .list-group-item {
     background: rgb(255,255,255);
     background: linear-gradient(90deg, rgba(255,255,255,1) 76%, rgba(0,0,0,0.1491947120645133) 100%, rgba(0,0,0,0) 100%);
+    color: black;
 }
 
+.navbar-toggler {
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 49%, rgba(0,0,0,0.1491947120645133) 100%, rgba(0,0,0,0) 100%);
+}
 
 h1 {
     color: black;
@@ -347,9 +350,23 @@ h1 {
 .artist-name {
     color: white;
     font-size: xx-large;
-    text-align: center;
 }
 
-.image {
+.group-image {
     border: white 2px solid;
+    max-width: 200px;
+    max-height: 200px;
+    box-shadow: white ;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(255,255,255,0.3); 
+    box-shadow: 5px 5px 15px 5px rgba(255,255,255,0.3);
+}
+
+.solo-image {
+    border: white 2px solid;
+    box-shadow: white ;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(255,255,255,0.3); 
+    box-shadow: 5px 5px 15px 5px rgba(255,255,255,0.3);
+}
+
+.list-group-item {
 }

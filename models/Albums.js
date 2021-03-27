@@ -19,11 +19,11 @@ Albums.init(
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    album_image_med: {
+    image_med: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    album_image_big: {
+    image_big: {
         type: DataTypes.STRING,
         allowNull: false,
     },
