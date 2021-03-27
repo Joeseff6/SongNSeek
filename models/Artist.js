@@ -14,32 +14,21 @@ Artist.init(
     artist_name: {
         type: DataTypes.STRING,
         allowNull: false,
-        // validate: {
-        //     len: [8],
-        // },
     },
     artist_songs: {
         type: DataTypes.STRING,
         allowNull: true,
-        // validate: {
-        //     len: [8],
-        // },
+
     },
     artist_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        unique: true,
     },
     artist_image: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    // album_releases: {
-    //     type: DataTypes.STRING,
-    //     allowNull: true,
-    //     // validate: {
-    //     //     len: [8],
-    //     // },
-    // },
     library_id: {
         type: DataTypes.INTEGER,
         references: {
@@ -47,13 +36,7 @@ Artist.init(
         key: 'id',
         },
     },
-    // search_id: {
-    //     type: DataTypes.INTEGER,
-    //     references: {
-    //     model: 'search',
-    //     key: 'id',
-    //     },
-    // },
+
 },
     {
     sequelize,
