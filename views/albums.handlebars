@@ -1,10 +1,8 @@
-<section class="container">
-    <h3 class="album-name">{{album.name}}</h3>
-    <div class="album-details">
-        <p>By: {{album.artist}}</p>
-        <p>By: {{artist}}</p>
-        {{#each artist.album as |album|}}
-        {{> album-details}}
-        {{/each}}
-    </div>
+<section class="album">
+    {{#each albums as |album|}}
+    <img src="{{album.album_image}}">
+    <a href="/library/albums/{{album.id}}" class="artist-name">{{album.artist_name}}</a>
+    <div class="artist-details">
+    </div>
+    {{/each}}
 </section>
