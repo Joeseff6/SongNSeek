@@ -1,5 +1,5 @@
 <section class="artist">
-    <div class="row">
+    <div class="row ms-2">
     {{#each artists as |artist|}}
         <div class="col">
             <img class="mt-3 group-image" src="{{artist.image_med}}">
@@ -30,9 +30,8 @@
             <a href="{{artist.artist_songs}}">{{artist.artist_songs}}</h4>
             <br>
             <h3 class="my-2">{{artist.artist_name}}'s Deezer Page:</h3>      
-            <a class="my-2" href="https://deezer.com/search/{{artist.artist_name}}">https://deezer.com/search/{{artist.artist_name}}</a>
+            <a class="my-2" href="https://deezer.com/us/artist/{{artist.artist_id}}">https://deezer.com/us/artist/{{artist.artist_id}}</a>
         </div>
     </div>
-
     {{/if}}
 </section>

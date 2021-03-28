@@ -1,20 +1,19 @@
 const searchForm = $(`#searchForm`);
 const searchField = $(`#searchField`);
 const list = $(`#list`);
-
 capitalize($(`#username`).text());
+
+if (document.location.pathname === `/library` || document.location.pathname === `/`) {
+    searchForm.show();
+};
 
 searchForm.submit((event) => {
     event.preventDefault();
     let searchText = searchField.val().split(` `);
     let searchQuery = searchText.join(`%20`);
-    let searchUrl = `https://deezerdevs-deezer.p.rapidapi.com/search?q=${searchQuery}&index=0&limit=15`
-
+    let searchUrl = `https://deezerdevs-deezer.p.rapidapi.com/search?q=${searchQuery}&index=0&limit=15`;
     const settings = getRequest(searchUrl);
-    
     $.ajax(settings).done(function (response) {
-
-        console.log(response);
         let searchObj = response.data.map((search) => {
             let searchObj = {
                 artist_name: search.artist.name,
@@ -31,17 +30,12 @@ searchForm.submit((event) => {
             };
             return searchObj;
         })
-        console.log(searchObj);
-
         createList(searchObj);
-
         $(`.searchOption`).click(function () {
             let index = $(this).attr(`data-index`);
             let userChoice = searchObj[index];
-            console.log(userChoice)
-
             saveChoice(userChoice);
-        })
+        });
     });
 });
 
@@ -51,10 +45,8 @@ function capitalize(text) {
     return;
 }
 
-
 const createList = (searchObj) => {
     $(`.remove`).remove();
-
     if (searchObj.length === 0) {
         let listEl = $(`<li/>`);
         listEl.text(`No results found!`)
@@ -69,8 +61,6 @@ const createList = (searchObj) => {
         listEl.text(`${searchObj[i].artist_name}/${searchObj[i].song_name}/${searchObj[i].album_title}`)
         .attr(`class`,`btn remove searchOption list-group-item`)
         .attr(`data-index`,`${i}`)
-        
-
         list.append(listEl);
     };
     searchField.val(``);
@@ -99,9 +89,7 @@ const saveChoice = async (userChoice) => {
         },
         body: JSON.stringify(userChoice),
     });
-
     document.location.replace('/library/artists');
-
 } 
 
 const deleteArtist = async(artist_id) =>{

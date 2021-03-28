@@ -368,5 +368,6 @@ h1 {
     box-shadow: 5px 5px 15px 5px rgba(255,255,255,0.3);
 }
 
-.list-group-item {
+#searchForm {
+    display: none;
 }
