@@ -1,5 +1,13 @@
 # Joseph Soria
 
+## Fri Mar 26 2021
+
+- Worked with the team on zoom
+    - Worked on Models
+        - [setback] Models weren't pulling information correctly
+        - [success] Changed model associations to pull referenced information
+    - Worked on handlebars to complete views
+    - [success] completed project
 ## Thurs Mar 25 2021
 
 - Worked with the team on zoom
