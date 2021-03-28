@@ -207,24 +207,24 @@ router.get(`/signup`, (req,res) => {
     res.render(`signup`);
 });
 
-router.get(`/library/artists`, async (req,res) => {
-        if (!req.session.loggedIn) {
-            res.render(`login`);
-            return;
-        };
-        const userData = await User.findOne({
-            where: {
-                id: req.session.userId,
-            },
-        });
-        const user = userData.get({plain: true});
-        const artistData = await Artist.findAll();
-        const artists = artistData.map(artists => {
-            return artists.get({plain: true});
-        });
-        console.log(artists)
-        res.render(`artist`, { layout: `library`, user, artists } );
-    })
+router.get(`/library/artists`, async (req,res) => {
+    if (!req.session.loggedIn) {
+        res.render(`login`);
+        return;
+    };
+    const userData = await User.findOne({
+        where: {
+            id: req.session.userId,
+        },
+    });
+    const user = userData.get({plain: true});
+    const artistData = await Artist.findAll();
+    const artists = artistData.map(artists => {
+        return artists.get({plain: true});
+    });
+    console.log(artists)
+    res.render(`artist`, { layout: `library`, user, artists } );
+})
 
 router.get(`/library/albums`, async (req,res) => {
     if (!req.session.loggedIn) {
@@ -242,8 +242,8 @@ router.get(`/library/albums`, async (req,res) => {
         return albums.get({plain: true});
     });
     console.log(albums)
-    res.render(`album`, { layout: `library`, user, albums } );
-})
+    res.render(`albums`, { layout: `library`, user, albums } );
+});
 
 router.get(`/library/songs`, async (req,res) => {
     if (!req.session.loggedIn) {
@@ -256,12 +256,12 @@ router.get(`/library/songs`, async (req,res) => {
         },
     });
     const user = userData.get({plain: true});
-    const songData = await Artist.findAll();
+    const songData = await Songs.findAll();
     const songs = songData.map(songs => {
         return songs.get({plain: true});
     });
     console.log(songs)
-    res.render(`songs`, { layout: `library`, user, songs } );
-})
+    res.render(`song`, { layout: `library`, user, songs } );
+});
 
 module.exports = router;
