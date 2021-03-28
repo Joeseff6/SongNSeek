@@ -1,44 +1,65 @@
 ![GitHub](https://img.shields.io/github/license/Joeseff6/SongNSeek)
 # 🎧 SongNSeek 🎵
-A music application utilizing ORM for a customized user playlist experience.
+A music application utilizing ORM for a customized user experience.
 ## Link to Deployed Application 🔗
 
-_Insert link here_
+_https://song-n-seek.herokuapp.com/_
 
-## Project Description ✏ 
+## Table of Contents
+
+1. [Project Description](#project-description)
+2. [What to Expect From the Application](#What-to-Expect-From-the-Application)
+3. [Tech Stack](#Tech-Stack)
+4. [Third-Party APIs](#Third-Party-APIs)
+5. [Server-side APIs](#Server-side-APIs)
+6. [User Story](#User-Story)
+7. [Project Roles](#Project-Roles)
+8. [Goals for Deployment](#Goals-for-Deployment)
+9. [Future Releases](#Future-Releases)
+10. [Screenshots](#Screenshots)
+11. [References](#References)
+
+## Project Description 
 
 The purpose of this project is to create an application that allows the user to stream music, create playlists, and much more. This will be done using a front-end user interface and front-end/back-end logic. Through the interaction of the front end, a user will be accessing a database to store their encrypted login information, as well as perform Create, Read, Update, and Delete methods for the database.
 ## What to Expect From the Application
 
-Music applications are an everyday part of the daily life. Users will stream music on apps like Apple Music, Spotify, and Deezer while driving in traffic, working out, or even working in the office. 
+Information in respect to music is being pulled everywhere every day. When you pull up a song on Spotify or Apple Music, information about the track inquired is being pulled at your request. This track information is then displayed to you, while giving the option to save this information to a library in a database.
 
-Users can utilize this application to relax and stream their favorite songs, while having the option to customize playlists to either fit a mood or fit into their environment. They will be able to create, update, or delete their playlist to make the user experience completely personal. An important feature to this application, and what also makes it personal, is the ability to create a new user so that the user's library is specific to them. This means that a login will be required, such that the user's session is saved until they log out.
+This project demonstrates the real life application of communication between the front-end (client-side), and the back-end (server-side) when pulling music information. Deezer's API was used to pull information based on the user's search, which is displayed to the user. Once the user selects an option, that selection is saved to a database for storage per the user's library. 
+
+he user will be able to see information in regards to their search, like the artist, album, and song selected. In the future, we plan to use this application for streaming services using auth and request tokens for Deezer users.
+
+## Tech Stack
+* Front-end: CSS3/HTML5
+* Front-end/back-end logic: Javascript
+* Database: MySQL
+* ORM: Sequelize 
+* Template engine: Handlebars.js
+* Server: Express.js via Node.js
 
 ### Third-Party APIs 
 * Jquery
 * Bootstrap
 * Google Fonts
 * Font Awesome
-* Knockout.js
 
 ### Server-side APIs
-* Napster
-* Spotify
-* Web Audio API
+* Deezer 
 
-## User Story 📖
+## User Story 
 
-_As a person who enjoys music,_
+_As an app developer with interest in music,_
 
-_I want to access a personal music web application_
+_I want to see a demonstration of front-end and back-end communication,_
 
-_So that I can listen to songs and customize playlists._
+_So that I can understand the user interface between client and server._
 
 
-## Project Roles 👨‍💼👩‍💼
+## Project Roles
 
 * Joseph Soria
-    * _Project Manager, Front End Logic_
+    * _Project Manager, Front End/Back End Developer_
         * __Github:__ https://github.com/Joeseff6
         * __LinkedIn:__ https://www.linkedin.com/in/joseph-soria-5a335845/
 
@@ -52,24 +73,31 @@ _So that I can listen to songs and customize playlists._
         * __Github:__ https://github.com/Desparta05
         * __LinkedIn:__ https://www.linkedin.com/in/dennis-sacaza-06627b145/
 
-## Tasks to Complete the Job ✅
+## Goals for Deployment
 
-- [ ] Allow a user to create a new account
-- [ ] Allow the user to delete their account
-- [ ] Store the user information in a database while encrypting the password
-- [ ] Allow the user to login if their account already exists
-- [ ] Display search when user signs in or creates account
-- [ ] Allow user to search by song, artist, or album
-- [ ] Present user with choices based on search
-- [ ] Allow user to add choice to a playlist
-- [ ] Stream user's choice
-- [ ] Add user's choice to a search history
-- [ ] Allow user to logout and end their session
+- [x] Allow a user to create a new account
+- [x] Store the user information in a database while encrypting the password
+- [x] Allow the user to login if their account already exists
+- [x] Display search when user signs in or creates account
+- [x] Allow user to search by song, artist, or album
+- [x] Display choices upon submitting GET request to API
+- [x] POST user's choice into a database server
+- [x] Display chosen artists, songs, and albums depending on route
+- [x] Present user with choices based on search
+- [x] Allow user to logout and end their session
 ## Future Releases
-* Allow user to search for random playlists
-## Screenshots 📷
+* Allow user to create playlist
+* Allow user to delete account
+* Allow user to stream music using Deezer account
+## Screenshots
+![The homepage view when directed to the home route](./assets/Homepage.jpg)
+![The login view](./assets/Login.jpg)
+![The signup view](./assets/Signup.jpg)
+![The search view once signing or logging in](./assets/Searchview.jpg)
+![The search options upon user submission](./assets/Searchoptions.jpg)
+![The artist view when directed to library/artist](./assets/Artistview.jpg)
+![The library view when directed to library/album](./assets/Albumview.jpg)
 
-### Development Photos
 
 ### References
 * https://stackoverflow.com/questions/6169666/how-to-resize-an-image-to-fit-in-the-browser-window
