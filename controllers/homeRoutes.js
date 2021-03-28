@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
             },
         });
         const user = userData.get({plain: true});
-        res.render(`library-view`, { layout: `library`, user });
+        res.render(`library-view`, { layout: `library`, user});
         return
     }
 
@@ -263,5 +263,19 @@ router.get(`/library/songs`, async (req,res) => {
     console.log(songs)
     res.render(`song`, { layout: `library`, user, songs } );
 });
+
+router.get(`/library/deleteUser`, async (req,res) => {
+    if (!req.session.loggedIn) {
+        res.render(`login`);
+        return;
+    };
+    const userData = await User.findOne({
+        where: {
+            id: req.session.userId,
+        },
+    });
+    const user = userData.get({plain: true});
+    res.render(`delete-user`, { layout: `library`, user } );
+})
 
 module.exports = router;

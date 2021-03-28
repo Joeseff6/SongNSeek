@@ -39,6 +39,10 @@ searchForm.submit((event) => {
     });
 });
 
+$(`#deleteUser`).click(function () {
+    deleteUser();
+});
+
 function capitalize(text) {
     let newText = text.charAt(0).toUpperCase() + text.slice(1);
     $(`#username`).text(newText);
@@ -92,12 +96,22 @@ const saveChoice = async (userChoice) => {
     document.location.replace('/library/artists');
 } 
 
-const deleteArtist = async(artist_id) =>{
+const deleteUser = async() => {
+    await fetch(`/api/users/deleteUser`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
+    document.location.replace(`/`)
+};
+
+const deleteArtist = async(artist_id) => {
     await fetch(`/api/library/artist`, {
-    method: 'DELETE',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(artist_id),
-});
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(artist_id),
+    });
 };

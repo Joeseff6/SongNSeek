@@ -7,10 +7,12 @@ const Library = require('./Library');
 // User
 User.hasOne(Library, {
   foreignKey: 'user_id',
-  onDelete: 'CASCADE'
+  onDelete: 'CASCADE',
 });
+
 Library.belongsTo(User, {
   foreignKey: 'user_id',
+  onDelete: `CASCADE`,
 })
 
 Artist.hasMany(Songs, {
@@ -33,7 +35,6 @@ Albums.belongsTo(Artist, {
   onDelete: `CASCADE`,
 });
 
-
 Library.belongsToMany(Songs, {
   through: 'library_songs',
 });
@@ -43,11 +44,18 @@ Songs.belongsToMany(Library, {
 
 Library.belongsToMany(Artist, {
   through:'library_artist',
-  onDelete: `CASCADE`
 });
+
 Artist.belongsToMany(Library, {
   through: 'library_artist',
-  onDelete: `CASCADE`
+});
+
+Albums.belongsToMany(Library, {
+  through: 'library_albums',
+});
+
+Library.belongsToMany(Albums, {
+  through: 'library_albums',
 });
 
 

@@ -371,3 +371,7 @@ h1 {
 #searchForm {
     display: none;
 }
+
+#deleteUserLink {
+    color: red;
+}

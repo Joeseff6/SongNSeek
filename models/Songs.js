@@ -34,6 +34,7 @@ Songs.init(
         model: 'library',
         key: 'id',
         },
+        onDelete: `CASCADE`,
     },
 },
     {
