@@ -1,5 +1,12 @@
 # Joseph Soria
 
+## Thurs Mar 25 2021
+
+- Worked with the team on zoom
+ - Reviewed models
+ - Worked on POST routes in libraryRoutes
+ - Worked on GET routes in homeRoutes
+
 ## Wed Mar 24 2021
 
 - Worked in class today
@@ -28,6 +35,7 @@
     - [success] Created list of options from search results
     - [todo] Review async functions
     - [todo] Write script for post requests to database
+
 ## Sun Mar 21 2021
 
 - Dead day, wasn't able to work on project due to other commitments
