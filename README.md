@@ -90,13 +90,13 @@ _So that I can understand the user interface between client and server._
 * Allow user to delete account
 * Allow user to stream music using Deezer account
 ## Screenshots
-![The homepage view when directed to the home route](./assets/Homepage.jpg)
-![The login view](./assets/Login.jpg)
-![The signup view](./assets/Signup.jpg)
-![The search view once signing or logging in](./assets/Searchview.jpg)
-![The search options upon user submission](./assets/Searchoptions.jpg)
-![The artist view when directed to library/artist](./assets/Artistview.jpg)
-![The library view when directed to library/album](./assets/Albumview.jpg)
+![The homepage view when directed to the home route](./assets/Homepage.JPG)
+![The login view](./assets/Login.JPG)
+![The signup view](./assets/Signup.JPG)
+![The search view once signing or logging in](./assets/Searchview.JPG)
+![The search options upon user submission](./assets/Searchoptions.JPG)
+![The artist view when directed to library/artist](./assets/Artistview.JPG)
+![The library view when directed to library/album](./assets/Albumview.JPG)
 
 
 ### References
