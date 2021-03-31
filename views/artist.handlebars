@@ -27,10 +27,10 @@
             {{> album-details}}
             {{/each}}    
             <h3 class="my-2">{{artist.artist_name}}'s Top 50 API:</h3>      
-            <a href="{{artist.artist_songs}}">{{artist.artist_songs}}</h4>
+            <a target="_blank" href="{{artist.artist_songs}}">{{artist.artist_songs}}</h4>
             <br>
             <h3 class="my-2">{{artist.artist_name}}'s Deezer Page:</h3>      
-            <a class="my-2" href="https://deezer.com/us/artist/{{artist.artist_id}}">https://deezer.com/us/artist/{{artist.artist_id}}</a>
+            <a class="my-2" target="_blank" href="https://deezer.com/us/artist/{{artist.artist_id}}">https://deezer.com/us/artist/{{artist.artist_id}}</a>
         </div>
     </div>
     {{/if}}
