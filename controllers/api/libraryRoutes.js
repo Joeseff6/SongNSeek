@@ -40,22 +40,7 @@ router.post(`/`, async (req,res) => {
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
-  }
-})
-
-
-// router.delete('/:id', async (req, res) => {
-//   try {
-//     const libraryRoutesData = await libraryRoutes.destroy({
-//       where: {
-//         artist_id
-//       }
-//   }));
-
-//   if (err) return res.status(500).json(err);
-
-//   res.json(trip);
-// });
-
+  };
+});
 
 module.exports = router;

@@ -47,14 +47,15 @@ function capitalize(text) {
     let newText = text.charAt(0).toUpperCase() + text.slice(1);
     $(`#username`).text(newText);
     return;
-}
+};
 
 const createList = (searchObj) => {
     $(`.remove`).remove();
     if (searchObj.length === 0) {
         let listEl = $(`<li/>`);
-        listEl.text(`No results found!`)
-        .attr(`class`,`btn remove`);
+        listEl
+        .text(`No results found!`)
+        .attr(`class`,`btn remove list-group-item`);
         list.append(listEl);
         searchField.val(``);
         return;
@@ -93,8 +94,8 @@ const saveChoice = async (userChoice) => {
         },
         body: JSON.stringify(userChoice),
     });
-    document.location.replace('/library/artists');
-} 
+    document.location.replace('/artists');
+};
 
 const deleteUser = async() => {
     await fetch(`/api/users/deleteUser`, {
@@ -103,7 +104,7 @@ const deleteUser = async() => {
             'Content-Type': 'application/json',
         },
     });
-    document.location.replace(`/`)
+    document.location.replace(`/`);
 };
 
 const deleteArtist = async(artist_id) => {

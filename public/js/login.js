@@ -11,7 +11,6 @@ const loginHandler = async (event) => {
         });
 
         if (response.ok) {
-            // TODO: change route location once established
             document.location.replace('/library');
         } else {
             document.getElementById(`wrong`).innerHTML = `Couldn't find that user, 
