@@ -1,11 +1,11 @@
 <section class="album">
-    <div class="row">
-    {{#each songs as |song|}}
+    <div class="row ms-2">
+        {{#each songs as |song|}}
         <div class="col">
             <img class="mt-3 group-image" src="{{song.artist.image_med}}">
             <a style="font-size: large;" href="/songs/{{song.id}}" class="artist-name d-block">{{song.song_name}}</a>
         </div>
-    {{/each}}
+        {{/each}}
     {{#if song}}
     <div class="row mt-2">
         <div class="col">
