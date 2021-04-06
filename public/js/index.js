@@ -2,11 +2,9 @@ const searchForm = $(`#searchForm`);
 const searchField = $(`#searchField`);
 const list = $(`#list`);
 capitalize($(`#username`).text());
-
 if (document.location.pathname === `/library` || document.location.pathname === `/`) {
     searchForm.show();
 };
-
 searchForm.submit((event) => {
     event.preventDefault();
     let searchText = searchField.val().split(` `);
@@ -38,17 +36,14 @@ searchForm.submit((event) => {
         });
     });
 });
-
 $(`#deleteUser`).click(function () {
     deleteUser();
 });
-
 function capitalize(text) {
     let newText = text.charAt(0).toUpperCase() + text.slice(1);
     $(`#username`).text(newText);
     return;
 };
-
 const createList = (searchObj) => {
     $(`.remove`).remove();
     if (searchObj.length === 0) {
@@ -59,8 +54,7 @@ const createList = (searchObj) => {
         list.append(listEl);
         searchField.val(``);
         return;
-    }
-
+    };
     for (let i = 0; i < searchObj.length-1; i++) {
         let listEl = $(`<li/>`);
         listEl.text(`${searchObj[i].artist_name}/${searchObj[i].song_name}/${searchObj[i].album_title}`)
@@ -70,8 +64,6 @@ const createList = (searchObj) => {
     };
     searchField.val(``);
 };
-
-
 const getRequest = (searchUrl) => {
     let settings = {
         "async": true,
@@ -85,7 +77,6 @@ const getRequest = (searchUrl) => {
     };
     return settings;
 };
-
 const saveChoice = async (userChoice) => {
         await fetch(`/api/library/`, {
         method: `POST`,
@@ -96,7 +87,6 @@ const saveChoice = async (userChoice) => {
     });
     document.location.replace('/artists');
 };
-
 const deleteUser = async() => {
     await fetch(`/api/users/deleteUser`, {
         method: 'DELETE',
@@ -106,7 +96,6 @@ const deleteUser = async() => {
     });
     document.location.replace(`/`);
 };
-
 const deleteArtist = async(artist_id) => {
     await fetch(`/api/library/artist`, {
         method: 'DELETE',
